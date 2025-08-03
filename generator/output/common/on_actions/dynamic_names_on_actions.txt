@@ -1,0 +1,36 @@
+on_startup = {
+	events = { dynamic_names.0 }
+}
+
+on_government_change = {
+	events = { dynamic_names.0 }
+}
+
+on_native_change_government = {
+	events = { dynamic_names.0 }
+}
+
+on_religion_change = {
+	events = { dynamic_names.0 }
+}
+
+on_primary_culture_changed = {
+	events = { dynamic_names.0 }
+}
+
+on_monarch_death = {
+	events = { dynamic_names.0 }
+}
+
+on_country_creation = {
+	events = { dynamic_names.0 }
+}
+
+on_bi_yearly_pulse = {
+	events = { dynamic_names.0 }
+}
+
+on_country_released = {
+	events = { dynamic_names.0 }
+}
+
