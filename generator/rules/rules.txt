@@ -3584,6 +3584,16 @@ GREAT_GORYEO = {
     }
 }
 
+
+GREAT_VIET = {
+    name = "Great Viet"
+    conditions = {
+        is_emperor_of_china = yes
+        primary_culture = vietnamese
+    }
+}
+
+# Sinicized titles for non-han culture Emperor of China
 GREAT_HAN = {
     name = "Great Zhonghan"
     tags = {
@@ -3616,14 +3626,6 @@ GREAT_YUE = {
     conditions = {
         is_emperor_of_china = yes
         primary_culture = vietnamese_new
-    }
-}
-
-GREAT_VIET = {
-    name = "Great Viet"
-    conditions = {
-        is_emperor_of_china = yes
-        primary_culture = vietnamese
     }
 }
 
@@ -3833,7 +3835,7 @@ CHINA = {
 }
 
 CHINA_EMPIRE = {
-    name = "Chinese Empire"
+    name = "Empire of China"
     conditions = {
         has_reform = become_rev_empire_reform
         is_emperor_of_china = yes
@@ -4177,7 +4179,7 @@ NORTH_SEA_EMPIRE = {
 }
 
 NOVGOROD_REPUBLIC = {
-    name = "Lord {NAME} the Great"
+    name = "Lord Novgorod the Great"
     tags = {
         NOV
     }
@@ -4190,7 +4192,7 @@ NOVGOROD_REPUBLIC = {
 }
 
 NOVGOROD_GREAT_REPUBLIC = {
-    name = "Sovereign Lord {NAME} the Greatest"
+    name = "Sovereign Lord Novgorod the Greatest"
     tags = {
         NOV
     }
@@ -4210,14 +4212,88 @@ THREE_LEAGUES = {
     }
 }
 
-EMPIRE_OF_THE_ROMANS = {
-    name = "Empire of the Romans"
+# Roman Empire depending on the existence of either the Byzantine or Roman tags
+BYZ_ROMAN_EMPIRE = {
+    name = "Roman Empire"
+    tags = {
+        BYZ
+    }
+}
+
+ROM_ROMAN_EMPIRE = {
+    name = "Roman Empire"
+    tags = {
+        ROM
+    }
+}
+
+EASTERN_ROMAN_EMPIRE = {
+    name = "Eastern Roman Empire"
     tags = {
         BYZ
     }
     conditions = {
-        has_reform = monarchy_mechanic
-        government_rank = 3
+        exists = ROM
+    }
+}
+
+
+WESTERN_ROMAN_EMPIRE = {
+    name = "Western Roman Empire"
+    tags = {
+        ROM
+    }
+    conditions = {
+        exists = BYZ
+    }
+}
+
+
+BYZ_ROMAN_REPUBLIC = {
+    name = "Roman Republic"
+    tags = {
+        BYZ
+    }
+    conditions = {
+        government = republic
+        is_subject = no
+        NOT = { exists = ROM }
+    }
+}
+
+ROM_ROMAN_REPUBLIC = {
+    name = "Roman Republic"
+    tags = {
+        ROM
+    }
+    conditions = {
+        government = republic
+        is_subject = no
+        NOT = { exists = BYZ }
+    }
+}
+
+EASTERN_ROMAN_REPUBLIC = {
+    name = "Eastern Roman Republic"
+    tags = {
+        BYZ
+    }
+    conditions = {
+        government = republic
+        is_subject = no
+        exists = ROM
+    }
+}
+
+WESTERN_ROMAN_REPUBLIC = {
+    name = "Western Roman Republic"
+    tags = {
+        ROM
+    }
+    conditions = {
+        government = republic
+        is_subject = no
+        exists = BYZ
     }
 }
 
@@ -4232,14 +4308,25 @@ EMPIRE_OF_TREBIZOND = {
     }
 }
 
-REPUBLIC_OF_THE_ROMANS = {
-    name = "Republic of the Romans"
+REPUBLIC_OF_TREBIZOND = {
+    name = "Republic of {NAME}"
     tags = {
-        BYZ
+        TRE
     }
     conditions = {
         government = republic
         is_subject = no
+    }
+}
+
+GOTHIC_EMPIRE = {
+    name = "Gothic Empire"
+    tags = {
+        FEO
+    }
+    conditions = {
+        has_country_flag = is_GOTHIA_flag
+        government_rank = 2
     }
 }
 
