@@ -1174,11 +1174,15 @@ NIZAMATE = {
     }
 }
 
-PRINCIPALITY_ROMANIAN = {
+PRINCIPALITY_EASTERN = {
     name = "Principality of {NAME}"
     conditions = {
         government = monarchy
-        primary_culture = romanian
+        OR = {
+            primary_culture = romanian
+            primary_culture = goths
+            primary_culture = gothic_ger
+        }
     }
 }
 
