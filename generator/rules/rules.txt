@@ -1520,7 +1520,6 @@ MALIKATE = {
                 }
             }
         }
-
     }
 }
 
@@ -3588,7 +3587,6 @@ GREAT_GORYEO = {
     }
 }
 
-
 GREAT_VIET = {
     name = "Great Viet"
     conditions = {
@@ -4241,7 +4239,6 @@ EASTERN_ROMAN_EMPIRE = {
     }
 }
 
-
 WESTERN_ROMAN_EMPIRE = {
     name = "Western Roman Empire"
     tags = {
@@ -4252,7 +4249,6 @@ WESTERN_ROMAN_EMPIRE = {
     }
 }
 
-
 BYZ_ROMAN_REPUBLIC = {
     name = "Roman Republic"
     tags = {
@@ -4261,7 +4257,9 @@ BYZ_ROMAN_REPUBLIC = {
     conditions = {
         government = republic
         is_subject = no
-        NOT = { exists = ROM }
+        NOT = {
+            exists = ROM
+        }
     }
 }
 
@@ -4273,7 +4271,9 @@ ROM_ROMAN_REPUBLIC = {
     conditions = {
         government = republic
         is_subject = no
-        NOT = { exists = BYZ }
+        NOT = {
+            exists = BYZ
+        }
     }
 }
 
