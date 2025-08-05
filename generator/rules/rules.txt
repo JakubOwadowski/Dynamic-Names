@@ -35,6 +35,14 @@ REPUBLIC = {
     }
 }
 
+PEASANT_REPUBLIC = {
+    name = "Peasant Republic of {NAME}"
+    conditions = {
+        government = republic
+        has_reform = peasants_republic
+    }
+}
+
 BISHOPRIC = {
     name = "Bishopric of {NAME}"
     conditions = {
@@ -1927,14 +1935,6 @@ OTTOMAN_MARCH = {
         NOT = {
             government_rank = 2
         }
-    }
-}
-
-PARLIAMENT_OF_HEAVEN = {
-    name = "Heavenly {NAME} Parliament"
-    conditions = {
-        has_reform = celestial_empire
-        has_reform = parliamentary_reform
     }
 }
 
@@ -3842,6 +3842,14 @@ CHINA_EMPIRE = {
         has_reform = become_rev_empire_reform
         is_emperor_of_china = yes
         is_revolutionary_republic_trigger = yes
+    }
+}
+
+PARLIAMENT_OF_HEAVEN = {
+    name = "Heavenly Parliament of {NAME}"
+    conditions = {
+        has_reform = celestial_empire
+        has_reform = parliamentary_reform
     }
 }
 
