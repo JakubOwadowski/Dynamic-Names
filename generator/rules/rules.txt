@@ -408,6 +408,7 @@ EMIRATE_REPUBLIC = {
         NOT = {
             government_rank = 2
         }
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -420,6 +421,7 @@ VIZIERATE = {
         NOT = {
             government_rank = 3
         }
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -429,6 +431,7 @@ GRAND_VIZIERATE = {
         government = republic
         religion_group = muslim
         government_rank = 3
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -500,42 +503,42 @@ AMBROSIAN_REPUBLIC = {
     }
 }
 
-UNITED_PROVINCES = {
-    name = "United Provinces of {NAME}"
-    conditions = {
-        OR = {
-            AND = {
-                government = republic
-                primary_culture = dutch
-                NOT = {
-                    is_revolutionary_republic_trigger = yes
-                }
-                NOT = {
-                    has_reform = presidential_despot_reform
-                }
-            }
-            AND = {
-                has_reform = states_general_reform
-                NOT = {
-                    has_reform = parliamentary_reform
-                }
-                NOT = {
-                    has_reform = presidential_reform
-                }
-                NOT = {
-                    is_revolutionary_republic_trigger = yes
-                }
-                NOT = {
-                    has_reform = constitutional_republic
-                }
-                NOT = {
-                    has_reform = presidential_despot_reform
-                }
-            }
-        }
-        government_rank = 2
-    }
-}
+# UNITED_PROVINCES = {
+#     name = "United Provinces of {NAME}"
+#     conditions = {
+#         OR = {
+#             AND = {
+#                 government = republic
+#                 primary_culture = dutch
+#                 NOT = {
+#                     is_revolutionary_republic_trigger = yes
+#                 }
+#                 NOT = {
+#                     has_reform = presidential_despot_reform
+#                 }
+#             }
+#             AND = {
+#                 has_reform = states_general_reform
+#                 NOT = {
+#                     has_reform = parliamentary_reform
+#                 }
+#                 NOT = {
+#                     has_reform = presidential_reform
+#                 }
+#                 NOT = {
+#                     is_revolutionary_republic_trigger = yes
+#                 }
+#                 NOT = {
+#                     has_reform = constitutional_republic
+#                 }
+#                 NOT = {
+#                     has_reform = presidential_despot_reform
+#                 }
+#             }
+#         }
+#         government_rank = 2
+#     }
+# }
 
 HETMANATE = {
     name = "{NAME_ADJ} Hetmanate"
@@ -2603,54 +2606,54 @@ DAIMYO = {
     }
 }
 
-FEDERAL_KINGDOM = {
-    name = "Federal Kingdom of {NAME}"
-    conditions = {
-        has_reform = states_general_reform
-        NOT = {
-            has_reform = parliamentary_reform
-        }
-        NOT = {
-            has_reform = presidential_reform
-        }
-        NOT = {
-            is_revolutionary_republic_trigger = yes
-        }
-        NOT = {
-            has_reform = constitutional_republic
-        }
-        NOT = {
-            has_reform = presidential_despot_reform
-        }
-        government_rank = 2
-        NOT = {
-            government_rank = 3
-        }
-    }
-}
+# FEDERAL_KINGDOM = {
+#     name = "Federal Kingdom of {NAME}"
+#     conditions = {
+#         has_reform = states_general_reform
+#         NOT = {
+#             has_reform = parliamentary_reform
+#         }
+#         NOT = {
+#             has_reform = presidential_reform
+#         }
+#         NOT = {
+#             is_revolutionary_republic_trigger = yes
+#         }
+#         NOT = {
+#             has_reform = constitutional_republic
+#         }
+#         NOT = {
+#             has_reform = presidential_despot_reform
+#         }
+#         government_rank = 2
+#         NOT = {
+#             government_rank = 3
+#         }
+#     }
+# }
 
-FEDERAL_EMPIRE = {
-    name = "Federal Empire of {NAME}"
-    conditions = {
-        has_reform = states_general_reform
-        NOT = {
-            has_reform = parliamentary_reform
-        }
-        NOT = {
-            has_reform = presidential_reform
-        }
-        NOT = {
-            is_revolutionary_republic_trigger = yes
-        }
-        NOT = {
-            has_reform = constitutional_republic
-        }
-        NOT = {
-            has_reform = presidential_despot_reform
-        }
-        government_rank = 3
-    }
-}
+# FEDERAL_EMPIRE = {
+#     name = "Federal Empire of {NAME}"
+#     conditions = {
+#         has_reform = states_general_reform
+#         NOT = {
+#             has_reform = parliamentary_reform
+#         }
+#         NOT = {
+#             has_reform = presidential_reform
+#         }
+#         NOT = {
+#             is_revolutionary_republic_trigger = yes
+#         }
+#         NOT = {
+#             has_reform = constitutional_republic
+#         }
+#         NOT = {
+#             has_reform = presidential_despot_reform
+#         }
+#         government_rank = 3
+#     }
+# }
 
 USA = {
     name = "United States of America"
@@ -3644,17 +3647,6 @@ LATER = {
     }
 }
 
-IRI = {
-    name = "Islamic Republic of Iran"
-    tags = {
-        PER
-    }
-    conditions = {
-        government = republic
-        religion_group = muslim
-    }
-}
-
 OIRAT_CONFEDERATION = {
     name = "Four Oirat Confederation"
     tags = {
@@ -3775,204 +3767,11 @@ FRISIAN_FREEDOM = {
     }
 }
 
-REV_REPUBLIC = {
-    name = "{NAME_ADJ} Republic"
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-FRA_REV_EMPIRE = {
-    name = "Empire of the {NAME_ADJ}"
-    tags = {
-        FRA
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-ETRURIA_REPUBLIC = {
-    name = "Etrurian Republic"
-    tags = {
-        TUS
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-TURKEY = {
-    name = "Turkish Republic"
-    tags = {
-        TUR
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-TURKEY_EMPIRE = {
-    name = "Turkish Empire"
-    tags = {
-        TUR
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-CHINA = {
-    name = "Republic of China"
-    conditions = {
-        government = republic
-        is_emperor_of_china = yes
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-CHINA_EMPIRE = {
-    name = "Empire of China"
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_emperor_of_china = yes
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
 PARLIAMENT_OF_HEAVEN = {
     name = "Heavenly Parliament of {NAME}"
     conditions = {
         has_reform = celestial_empire
         has_reform = parliamentary_reform
-    }
-}
-
-IRAN = {
-    name = "Republic of Iran"
-    tags = {
-        PER
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-IRAN_EMPIRE = {
-    name = "Empire of Iran"
-    tags = {
-        PER
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-GURKANI = {
-    name = "Gurkani Empire"
-    tags = {
-        TIM
-    }
-    conditions = {
-        has_country_flag = is_gurkani_flag
-        government_rank = 3
-    }
-}
-
-GURKANI_REV = {
-    name = "Gurkani Republic"
-    tags = {
-        TIM
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-GURKANI_REV_EMPIRE = {
-    name = "Empire of Gurkani"
-    tags = {
-        TIM
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-SUBAPLINE_REPUBLIC = {
-    name = "Subalpine Republic"
-    tags = {
-        SAV
-        SPM
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-SUBAPLINE_EMPIRE = {
-    name = "Subalpine Empire"
-    tags = {
-        SAV
-        SPM
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-CISALPINE_REPUBLIC = {
-    name = "Cisalpine Republic"
-    tags = {
-        MLO
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-CISAPLINE_EMPIRE = {
-    name = "Cisalpine Empire"
-    tags = {
-        MLO
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-LIGURIAN_REPUBLIC = {
-    name = "Ligurian Republic"
-    tags = {
-        GEN
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-LIGURIAN_EMPIRE = {
-    name = "Ligurian Empire"
-    tags = {
-        GEN
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
     }
 }
 
@@ -3986,184 +3785,6 @@ SWISS_CONFEDERATION = {
         NOT = {
             government_rank = 3
         }
-    }
-}
-
-HELVETIC_REPUBLIC = {
-    name = "Helvetic Republic"
-    tags = {
-        SWI
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-HELVETIC_EMPIRE = {
-    name = "Helvetic Empire"
-    tags = {
-        SWI
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-BATAVIAN_REPUBLIC = {
-    name = "Batavian Republic"
-    tags = {
-        NED
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-BATAVIAN_EMPIRE = {
-    name = "Batavian Empire"
-    tags = {
-        NED
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-PAP_ROMAN_REPUBLIC = {
-    name = "Roman Republic"
-    tags = {
-        PAP
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-PAP_ROMAN_EMPIRE = {
-    name = "Roman Empire"
-    tags = {
-        PAP
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-REPUBIC_OF_SAN_MARCO = {
-    name = "Republic of San Marco"
-    tags = {
-        VEN
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-EMPIRE_OF_SAN_MARCO = {
-    name = "Empire of San Marco"
-    tags = {
-        VEN
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-PARTHENOPEAN_REPUBLIC = {
-    name = "Parthenopean Republic"
-    tags = {
-        TTS
-        NAP
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-PARTHENOPEAN_EMPIRE = {
-    name = "Parthenopean Empire"
-    tags = {
-        TTS
-        NAP
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-ILLYRIAN_REPUBLIC = {
-    name = "Illyrian Republic"
-    tags = {
-        CRO
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-ILLYRIAN_EMPIRE = {
-    name = "Illyrian Empire"
-    tags = {
-        CRO
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-DACIAN_REPUBLIC = {
-    name = "Dacian Republic"
-    tags = {
-        RMN
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-DACIAN_EMPIRE = {
-    name = "Dacian Empire"
-    tags = {
-        RMN
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-HELLENIC_REPUBLIC = {
-    name = "Hellenic Republic"
-    tags = {
-        GRE
-    }
-    conditions = {
-        government = republic
-        is_revolutionary_republic_trigger = yes
-    }
-}
-
-HELLENIC_EMPIRE = {
-    name = "Hellenic Empire"
-    tags = {
-        GRE
-    }
-    conditions = {
-        has_reform = become_rev_empire_reform
-        is_revolutionary_republic_trigger = yes
     }
 }
 
@@ -4310,7 +3931,7 @@ WESTERN_ROMAN_REPUBLIC = {
 }
 
 EMPIRE_OF_TREBIZOND = {
-    name = "Empire of {NAME}"
+    name = "Empire of Trebizond"
     tags = {
         TRE
     }
@@ -4321,7 +3942,7 @@ EMPIRE_OF_TREBIZOND = {
 }
 
 REPUBLIC_OF_TREBIZOND = {
-    name = "Republic of {NAME}"
+    name = "Republic of Trebizond"
     tags = {
         TRE
     }

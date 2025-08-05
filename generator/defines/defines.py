@@ -1,6 +1,7 @@
 RULES_PATH = "rules/rules.txt"
 DYNASTIES_PATH = "data/dynasties.txt"
 TAG_NAMES_PATH = "data/tag_names.txt"
+REVOLUTIONARIES_PATH = "data/revolutionary_names.txt"
 EVENT_NAME = "dynamic_names"
 
 EVENT_SCRIPT_HEADER = """\

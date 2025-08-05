@@ -1,5 +1,5 @@
 from classes.rule import Rule
-from classes.tagName import TagName
+from classes.tagName import Localisation
 from defines.defines import *
 from antlr4 import *
 from parser.RulesVisitor import RulesVisitor
@@ -20,9 +20,9 @@ def read_rules() -> list[Rule]:
     return visitor.visit(tree)
 
 
-def read_tag_names() -> list[(str, TagName)]:
+def read_tag_names() -> dict[str, Localisation]:
     tag_names = open(TAG_NAMES_PATH, encoding="utf-8-sig")
-    tag_name_list: dict[str, TagName] = {}
+    tag_name_list: dict[str, Localisation] = {}
     for line in tag_names:
         line_split = line.split(":")
         name = line_split[0]
@@ -37,7 +37,7 @@ def read_tag_names() -> list[(str, TagName)]:
             tagName.adj = process_name(value)
         else:
             value = process_name(value)
-            tagName = TagName(name=value, adj=None, adj2=None)
+            tagName = Localisation(name=value, adj=None, adj2=None)
             tag_name_list[name] = tagName
     return tag_name_list
 
@@ -50,7 +50,27 @@ def read_dynasties() -> list[str]:
     return dynasty_names_list
 
 
-def get_country_name(rule_name: str, tag_name: tuple[str, TagName]) -> str:
+def read_revolutionary_names() -> dict[str, Localisation]:
+    revolutionary_names = open(REVOLUTIONARIES_PATH, encoding="utf-8-sig")
+    revolutionary_names_list: dict[str, Localisation] = {}
+    for line in revolutionary_names:
+        if line.startswith("#") or not line.strip():
+            continue
+        line_split = line.split(":")
+        name = line_split[0]
+        value = line_split[1]
+        if "_ADJ" in name:
+            key = name.replace("_ADJ", "")
+            tagName = revolutionary_names_list[key]
+            tagName.adj = process_name(value)
+        else:
+            value = process_name(value)
+            tagName = Localisation(name=value, adj=None, adj2=None)
+            revolutionary_names_list[name] = tagName
+    return revolutionary_names_list
+
+
+def get_country_name(rule_name: str, tag_name: tuple[str, Localisation]) -> str:
     if "NAME_ADJ2" in rule_name:
         rule_name = rule_name.replace("{NAME_ADJ2}", tag_name[1].adj2)
     elif "NAME_ADJ" in rule_name:

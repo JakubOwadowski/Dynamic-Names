@@ -15,10 +15,11 @@ class ModBuilder:
         print("Tag names read successfully")
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
+        self.revolutionary_names_list = read_revolutionary_names()
+        print("Revolutionary names read successfully")
 
-        self.tag_names = list(self.tag_name_list.items())
         self.rules: dict[str, list[RuleEntry]] = defaultdict(list)
-        self.tag_to_rules: dict[str, list[RuleEntry]] = defaultdict(list)
+        self.tag_to_rules: dict[str, list[Rule]] = defaultdict(list)
         self.events = {}
         self.event_id = 1
 
@@ -28,15 +29,28 @@ class ModBuilder:
         }
 
     def assign_rules_to_tags(self):
+        for tag, localisation in self.revolutionary_names_list.items():
+            rule = Rule(
+                name=localisation.name,
+                tag_name=f"REV_{tag}",
+                tags=[tag],
+                conditions=[
+                    "government = republic",
+                    "is_revolutionary_republic_trigger = yes",
+                ],
+                revolutionary=True,
+            )
+            self.rules_list.append(rule)
+
         for rule in self.rules_list:
             if not rule.tags:
-                for tag, _ in self.tag_names:
+                for tag, _ in self.tag_name_list.items():
                     self.tag_to_rules[tag].append(rule)
             else:
                 for tag in rule.tags:
                     self.tag_to_rules[tag].append(rule)
 
-        for tag, _ in self.tag_names:
+        for tag, _ in self.tag_name_list.items():
             for rule in self.tag_to_rules[tag]:
                 name = get_country_name(rule.name, (tag, self.tag_name_list[tag]))
                 if name:
@@ -44,7 +58,12 @@ class ModBuilder:
                     if tag_name_value == "TEO_ELECTORATE":
                         tag_name_value = "TEO_ELECTORATE_NAME"
                     self.rules[tag].append(
-                        RuleEntry(tag_name_value, name, " ".join(rule.conditions))
+                        RuleEntry(
+                            tag_name_value,
+                            name,
+                            " ".join(rule.conditions),
+                            revolutionary=rule.revolutionary,
+                        )
                     )
 
     def generate_event_script(self):
@@ -56,7 +75,7 @@ class ModBuilder:
 
         # Compose event triggers for the initial event immediate block
         event_triggers = []
-        for tag, _ in self.tag_names:
+        for tag, _ in self.tag_name_list.items():
             event_triggers.append(
                 f"        if = {{ limit = {{ tag = {tag} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
@@ -78,7 +97,7 @@ class ModBuilder:
         ]
 
         # Country events per tag
-        for tag, _ in self.tag_names:
+        for tag, _ in self.tag_name_list.items():
             id = self.events[tag]
             conditions = []
             for rule in self.rules[tag]:
@@ -121,7 +140,14 @@ class ModBuilder:
             loc_lines.append(f" # {tag}")
             for entry in entries:
                 loc_lines.append(f' {entry.tag}: "{entry.name}"')
-                loc_lines.append(f' {entry.tag}_ADJ: "{self.tag_name_list[tag].adj}"')
+                if entry.revolutionary:
+                    loc_lines.append(
+                        f' {entry.tag}_REV: "{self.revolutionary_names_list[tag].adj}"'
+                    )
+                else:
+                    loc_lines.append(
+                        f' {entry.tag}_ADJ: "{self.tag_name_list[tag].adj}"'
+                    )
                 if self.tag_name_list[tag].adj2:
                     loc_lines.append(
                         f' {entry.tag}_ADJ2: "{self.tag_name_list[tag].adj2}"'

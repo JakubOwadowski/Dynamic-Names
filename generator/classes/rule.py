@@ -1,8 +1,11 @@
+from dataclasses import dataclass, field
+from typing import List
+
+
+@dataclass
 class Rule:
-    def __init__(
-        self, name: str, tag_name: str, tags: list[str], conditions: list[str]
-    ):
-        self.name = name
-        self.tag_name = tag_name
-        self.tags = tags
-        self.conditions = conditions
+    name: str
+    tag_name: str
+    tags: List[str] = field(default_factory=list)
+    conditions: List[str] = field(default_factory=list)
+    revolutionary: bool = False
