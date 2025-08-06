@@ -1,0 +1,8 @@
+# Baekje is not accurate but Buyeo or Bu isn't available
+Baek,Baekje
+Go,Goguryeo
+Park,Silla
+Kim,Silla
+Dae,Balhae
+Wang,Goryeo
+Yi,Joseon

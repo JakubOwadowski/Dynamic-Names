@@ -1,0 +1,19 @@
+Macaristan,HUN
+Slovakya,SLO
+Erdel,TRA
+Avusturya,HAB
+Lombardiya,MLO,FER,SAV
+Sicilya,SIC
+Roma,PAP
+Misir,EGY
+Trâblus Gârbsir,TRP
+Tunus,TUN
+Cezayir-i Gârb,ALG,TLC
+Endülüs,ADU,GRA
+Pers,PER,ARL,FRS
+Adal,ADA,HAR,AFA
+Venedik,VEN
+Cenova,GEN
+Fas,MOR,SOS,MRK,TFL,TET,FEZ
+Yemen,YEM,ADE,RAS
+    

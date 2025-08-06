@@ -32,7 +32,7 @@ class ModBuilder:
         for tag, localisation in self.revolutionary_names_list.items():
             rule = Rule(
                 name=localisation.name,
-                tag_name=f"REV_{tag}",
+                id=f"REV_{tag}",
                 tags=[tag],
                 conditions=[
                     "government = republic",
@@ -41,6 +41,13 @@ class ModBuilder:
                 revolutionary=True,
             )
             self.rules_list.append(rule)
+
+        self.rules_list.extend(add_feudatories())
+        self.rules_list.extend(add_protectorates())
+        self.rules_list.extend(add_jap_puppets())
+        self.rules_list.extend(add_emperor_of_china())
+        self.rules_list.extend(add_korean_dynasties())
+        self.rules_list.extend(add_eyalets())
 
         for rule in self.rules_list:
             if not rule.tags:
@@ -54,7 +61,7 @@ class ModBuilder:
             for rule in self.tag_to_rules[tag]:
                 name = get_country_name(rule.name, (tag, self.tag_name_list[tag]))
                 if name:
-                    tag_name_value = get_tag_name(tag, rule.tag_name)
+                    tag_name_value = get_tag_name(tag, rule.id)
                     if tag_name_value == "TEO_ELECTORATE":
                         tag_name_value = "TEO_ELECTORATE_NAME"
                     self.rules[tag].append(
@@ -68,7 +75,7 @@ class ModBuilder:
 
     def generate_event_script(self):
         dynasty_rules = [
-            (rule.name, " ".join(rule.conditions), rule.tag_name)
+            (rule.name, " ".join(rule.conditions), rule.id)
             for rule in self.rules_list
             if "{DYNASTY}" in rule.name
         ]
@@ -156,13 +163,13 @@ class ModBuilder:
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
             if "{DYNASTY}" in rule.name:
-                loc_lines.append(f"\n # {rule.tag_name}")
+                loc_lines.append(f"\n # {rule.id}")
                 for name in self.dynasty_names:
                     key = self.dynasty_keys[name]
                     loc_lines.append(
-                        f' {key}_{rule.tag_name}: "{rule.name.replace("{DYNASTY}", name.title())}"'
+                        f' {key}_{rule.id}: "{rule.name.replace("{DYNASTY}", name.title())}"'
                     )
-                    loc_lines.append(f' {key}_{rule.tag_name}_ADJ: "{name.title()}"')
+                    loc_lines.append(f' {key}_{rule.id}_ADJ: "{name.title()}"')
 
         loc_lines.append('update_dynamic_names_decision_title: "Update Dynamic Names"')
         loc_lines.append(

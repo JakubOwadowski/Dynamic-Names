@@ -105,3 +105,179 @@ def add_to_dict(dict: dict, key: str, value: str):
         dict[key] = []
     dict[key].append(value)
     return dict
+
+
+# Feudatories for each area in China
+def add_feudatories():
+    with open("data/feudatories.txt", encoding="utf-8-sig") as f:
+        rules = []
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            area, name = map(str.strip, line.split(",", 1))
+            rule = Rule(
+                name=name,
+                id=f"FEUD_{area.upper()}",
+                conditions=[
+                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+                    "overlord = { is_emperor_of_china = yes }",
+                    f"capital_scope = {{ area = {area} }}",
+                ],
+            )
+            rules.append(rule)
+        return rules
+
+
+# Tang-style Chinese protectorates for each region surrounding China
+def add_protectorates():
+    with open("data/protectorates.txt", encoding="utf-8-sig") as f:
+        rules = []
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            region, name = map(str.strip, line.split(",", 1))
+            rule = Rule(
+                name=name,
+                id=f"PROT_{region.upper()}",
+                conditions=[
+                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+                    "overlord = { is_emperor_of_china = yes }",
+                    f"capital_scope = {{ region = {region} }}",
+                ],
+            )
+            rules.append(rule)
+        return rules
+
+
+# Japanese puppet states
+def add_jap_puppets():
+    with open("data/japanese_puppets.txt", encoding="utf-8-sig") as f:
+        rules = []
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            region, name = map(str.strip, line.split(",", 1))
+            if region == "china_superregion":
+                variable = "superregion"
+            else:
+                variable = "region"
+            rule = Rule(
+                name=name,
+                id=f"JAP_PUPPET_{region.upper()}",
+                conditions=[
+                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+                    "overlord = { tag = JAP }",
+                    f"capital_scope = {{ {variable} = {region} }}",
+                ],
+            )
+            rules.append(rule)
+        return rules
+
+
+# Adds different names for the Emperor of China based on their primary culture
+def add_emperor_of_china():
+    with open("data/empire_of_china_names.txt", encoding="utf-8-sig") as f:
+        rules = []
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            culture, name = map(str.strip, line.split(",", 1))
+            rule = Rule(
+                name=name,
+                id=f"GREAT_{culture.upper()}",
+                conditions=[
+                    "is_emperor_of_china = yes",
+                    f"primary_culture = {culture}",
+                ],
+            )
+            rules.append(rule)
+        return rules
+
+
+# Changes the name of Korea based on the current ruling clan
+def add_korean_dynasties():
+    with open("data/korean_dynasties.txt", encoding="utf-8-sig") as f:
+        rules = []
+        rule_templates = [
+            (
+                "Kingdom of {name}",
+                "{id}_K",
+                [
+                    "has_reform = monarchy_mechanic",
+                ],
+            ),
+            (
+                "Empire of {name}",
+                "{id}_E",
+                [
+                    "has_reform = monarchy_mechanic",
+                    "government_rank = 3",
+                ],
+            ),
+            (
+                "Republic of {name}",
+                "{id}_R",
+                [
+                    "government = republic",
+                ],
+            ),
+            (
+                "Great {name}",
+                "{id}_EOC",
+                [
+                    "is_emperor_of_china = yes",
+                    "primary_culture = korean",
+                ],
+            ),
+        ]
+
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            dynasty, name = map(str.strip, line.split(",", 1))
+            for title, id_template, extra_conditions in rule_templates:
+                rule = Rule(
+                    name=title.format(name=name),
+                    id=id_template.format(id=name.upper()),
+                    tags=["KOR"],
+                    conditions=extra_conditions + [f'dynasty = "{dynasty}"'],
+                )
+                rules.append(rule)
+        return rules
+
+
+# Add Eyalets of The Ottoman Empire
+def add_eyalets():
+    with open("data/eyalets.txt", encoding="utf-8-sig") as f:
+        rules = []
+        n = 0
+        for line in f:
+            line = line.strip()
+            if line.startswith("#") or not line:
+                continue
+            name, tags = map(str.strip, line.split(",", 1))
+            rule = Rule(
+                name=name,
+                id=f"EY{n}",
+                tags=tags.split(","),
+                conditions=[
+                    "OR = { "
+                    + " ".join(
+                        [
+                            "is_subject_of_type = eyalet",
+                            "is_subject_of_type = core_eyalet",
+                            "has_reform = barbary_eyalet_government",
+                            "has_reform = eyalet_government",
+                        ]
+                    )
+                    + " }"
+                ],
+            )
+            rules.append(rule)
+            n += 1
+        return rules

@@ -1,0 +1,27 @@
+hebei_area,North Hebei Feudatory
+south_hebei_area,South Hebei Feudatory
+shandong_area,Shandong Feudatory
+jiangsu_area,North Jiangsu Feudatory
+south_jiangsu_area,South Jiangsu Feudatory
+anhui_area,North Anhui Feudatory
+south_anhui_area,South Anhui Feudatory
+zhejiang_area,Zhejiang Feudatory
+jiangxi_area,Jiangxi Feudatory
+fujian_area,Fujian Feudatory
+taiwan_area,Taiwan Feudatory
+guangdong_area,East Guangdong Feudatory
+west_guangdong_area,West Guangdong Feudatory
+guangxi_area,Guangxi Feudatory
+yun_gui_area,Yun-Gui Hinterland Feudatory
+yun_gui_borderland_area,Yun-Gui Frontier Feudatory
+sichuan_area,Sichuan Feudatory
+chuannan_area,Chuannan Feudatory
+chuanbei_area,Chuanbei Feudatory
+huguang_area,Hubei Feudatory
+hunan_area,Hunan Feudatory
+henan_area,South Henan Feudatory
+north_henan_area,North Henan Feudatory
+shanxi_area,Shanxi Feudatory
+shaanxi_area,Shaanxi Feudatory
+gansu_area,East Gansu Feudatory
+west_gansu_area,West Gansu Feudatory

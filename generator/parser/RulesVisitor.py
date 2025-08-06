@@ -20,7 +20,7 @@ class RulesVisitor(BaseRulesVisitor):
         tags = self.visit(ctx.tagsBlock()) if ctx.tagsBlock() else []
         conditions = self.visit(ctx.conditionsBlock()) if ctx.conditionsBlock() else []
 
-        return Rule(name=name, tag_name=tag_name, tags=tags, conditions=conditions)
+        return Rule(name=name, id=tag_name, tags=tags, conditions=conditions)
 
     def visitNameBlock(self, ctx: RulesParser.NameBlockContext):
         return ctx.STRING().getText().strip('"')

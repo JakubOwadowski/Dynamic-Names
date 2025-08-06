@@ -1,0 +1,6 @@
+japanese,Great Nihon
+vietnamese,Great Viet
+korean_new,Great Zhonghan
+zhuang_new,Great Zhuang
+tibetan_new,Great Zang
+vietnamese_new,Great Yue

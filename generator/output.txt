@@ -1,0 +1,8 @@
+Rules read successfully
+Tag names read successfully
+Dynasty names read successfully
+Revolutionary names read successfully
+Writing event done
+Writing localisation done
+Writing on_actions done
+Writing decision done
