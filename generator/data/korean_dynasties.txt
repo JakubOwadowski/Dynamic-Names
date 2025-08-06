@@ -1,9 +1,9 @@
 # Baekje is not accurate but Buyeo or Bu isn't available
-# Ruling Family Name,Dynasty Name
-Baek,Baekje
-Go,Goguryeo
-Park,Silla
-Kim,Silla
-Dae,Balhae
-Wang,Goryeo
-Yi,Joseon
+# Ruling Family Name,Dynasty Name,Dynasty Name Adjective
+Baek,Baekje,Baekjean
+Go,Goguryeo,Goguryeoan
+Park,Silla,Sillan
+Kim,Silla,Sillan
+Dae,Balhae,Balhaean
+Wang,Goryeo,Goryeoan
+Yi,Joseon,Joseonese

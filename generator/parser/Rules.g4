@@ -4,13 +4,14 @@ grammar Rules;
 root: ruleObject+ EOF;
 
 ruleObject:
-	IDENTIFIER '=' '{' nameBlock tagsBlock? conditionsBlock? '}';
+	IDENTIFIER '=' '{' nameBlock nameAdjBlock? tagsBlock? conditionsBlock? '}';
 
 nameBlock: 'name' '=' name = STRING;
+nameAdjBlock: 'name_adj' '=' name_adj = STRING;
 tagsBlock: 'tags' '=' '{' tag = IDENTIFIER+ '}';
 conditionsBlock: 'conditions' '=' '{' condition = expr+ '}';
 expr:
-	id = IDENTIFIER '=' (
+	identifier = IDENTIFIER '=' (
 		value = '{' expr+ '}'
 		| IDENTIFIER
 		| STRING

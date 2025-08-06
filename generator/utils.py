@@ -1,11 +1,10 @@
-from classes.rule import Rule
-from classes.tagName import Localisation
-from defines.defines import *
-from antlr4 import *
-from parser.RulesVisitor import RulesVisitor
 from parser.RulesLexer import RulesLexer
 from parser.RulesParser import RulesParser
-from classes.rule import Rule
+from parser.RulesBuilder import RulesBuilder
+
+from antlr4 import *
+from classes.Localisation import Localisation
+from classes.Rule import Rule
 from defines.defines import *
 
 
@@ -16,7 +15,7 @@ def read_rules() -> list[Rule]:
     parser = RulesParser(token_stream)
     tree = parser.root()
 
-    visitor = RulesVisitor()
+    visitor = RulesBuilder()
     return visitor.visit(tree)
 
 
@@ -239,10 +238,11 @@ def add_korean_dynasties():
             line = line.strip()
             if line.startswith("#") or not line:
                 continue
-            dynasty, name = map(str.strip, line.split(",", 1))
+            dynasty, name, name_adj = map(str.strip, line.split(",", 2))
             for title, id_template, extra_conditions in rule_templates:
                 rule = Rule(
                     name=title.format(name=name),
+                    name_adj=name_adj,
                     id=id_template.format(id=name.upper()),
                     tags=["KOR"],
                     conditions=extra_conditions + [f'dynasty = "{dynasty}"'],

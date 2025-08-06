@@ -256,6 +256,7 @@ HOLY_EMPIRE = {
 
 MAJIN_KINGDOM = {
     name = "Kingdom of Majin"
+    name_adj = "Majinese"
     tags = {
         KOR
     }
@@ -275,6 +276,7 @@ MAJIN_KINGDOM = {
 
 MAJIN_EMPIRE = {
     name = "Empire of Majin"
+    name_adj = "Majinese"
     tags = {
         KOR
     }

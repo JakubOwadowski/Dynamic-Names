@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
-from utils import *
-from classes.rule_entry import RuleEntry
 import os
 from collections import defaultdict
+
+from utils import *
+
+from classes.RuleEntry import RuleEntry
 
 
 class ModBuilder:
@@ -32,13 +34,13 @@ class ModBuilder:
         for tag, localisation in self.revolutionary_names_list.items():
             rule = Rule(
                 name=localisation.name,
+                name_adj=localisation.adj,
                 id=f"REV_{tag}",
                 tags=[tag],
                 conditions=[
                     "government = republic",
                     "is_revolutionary_republic_trigger = yes",
                 ],
-                revolutionary=True,
             )
             self.rules_list.append(rule)
 
@@ -57,19 +59,23 @@ class ModBuilder:
                 for tag in rule.tags:
                     self.tag_to_rules[tag].append(rule)
 
-        for tag, _ in self.tag_name_list.items():
+        for tag, loc in self.tag_name_list.items():
             for rule in self.tag_to_rules[tag]:
                 name = get_country_name(rule.name, (tag, self.tag_name_list[tag]))
                 if name:
                     tag_name_value = get_tag_name(tag, rule.id)
                     if tag_name_value == "TEO_ELECTORATE":
                         tag_name_value = "TEO_ELECTORATE_NAME"
+
+                    # Pick adjective: rule-specific if set, otherwise default
+                    name_adj = rule.name_adj if rule.name_adj else loc.adj
+
                     self.rules[tag].append(
                         RuleEntry(
-                            tag_name_value,
-                            name,
-                            " ".join(rule.conditions),
-                            revolutionary=rule.revolutionary,
+                            tag=tag_name_value,
+                            name=name,
+                            name_adj=name_adj,
+                            condition=" ".join(rule.conditions),
                         )
                     )
 
@@ -147,18 +153,7 @@ class ModBuilder:
             loc_lines.append(f" # {tag}")
             for entry in entries:
                 loc_lines.append(f' {entry.tag}: "{entry.name}"')
-                if entry.revolutionary:
-                    loc_lines.append(
-                        f' {entry.tag}_REV: "{self.revolutionary_names_list[tag].adj}"'
-                    )
-                else:
-                    loc_lines.append(
-                        f' {entry.tag}_ADJ: "{self.tag_name_list[tag].adj}"'
-                    )
-                if self.tag_name_list[tag].adj2:
-                    loc_lines.append(
-                        f' {entry.tag}_ADJ2: "{self.tag_name_list[tag].adj2}"'
-                    )
+                loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:

@@ -35,6 +35,15 @@ class RulesListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RulesParser#nameAdjBlock.
+    def enterNameAdjBlock(self, ctx:RulesParser.NameAdjBlockContext):
+        pass
+
+    # Exit a parse tree produced by RulesParser#nameAdjBlock.
+    def exitNameAdjBlock(self, ctx:RulesParser.NameAdjBlockContext):
+        pass
+
+
     # Enter a parse tree produced by RulesParser#tagsBlock.
     def enterTagsBlock(self, ctx:RulesParser.TagsBlockContext):
         pass

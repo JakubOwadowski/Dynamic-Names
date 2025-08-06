@@ -1,53 +1,48 @@
+# Generated from Rules.g4 by ANTLR 4.13.2
 from antlr4 import *
-
-from classes.rule import Rule
-from parser.BaseRulesVisitor import BaseRulesVisitor
-
 if "." in __name__:
     from .RulesParser import RulesParser
 else:
     from RulesParser import RulesParser
 
+# This class defines a complete generic visitor for a parse tree produced by RulesParser.
 
-class RulesVisitor(BaseRulesVisitor):
-    def visitRoot(self, ctx: RulesParser.RootContext):
-        return [self.visit(rule) for rule in ctx.ruleObject()]
+class RulesVisitor(ParseTreeVisitor):
 
-    def visitRuleObject(self, ctx: RulesParser.RuleObjectContext):
-        tag_name = ctx.IDENTIFIER().getText()
+    # Visit a parse tree produced by RulesParser#root.
+    def visitRoot(self, ctx:RulesParser.RootContext):
+        return self.visitChildren(ctx)
 
-        name = self.visit(ctx.nameBlock())
-        tags = self.visit(ctx.tagsBlock()) if ctx.tagsBlock() else []
-        conditions = self.visit(ctx.conditionsBlock()) if ctx.conditionsBlock() else []
 
-        return Rule(name=name, id=tag_name, tags=tags, conditions=conditions)
+    # Visit a parse tree produced by RulesParser#ruleObject.
+    def visitRuleObject(self, ctx:RulesParser.RuleObjectContext):
+        return self.visitChildren(ctx)
 
-    def visitNameBlock(self, ctx: RulesParser.NameBlockContext):
-        return ctx.STRING().getText().strip('"')
 
-    def visitTagsBlock(self, ctx: RulesParser.TagsBlockContext):
-        return [id_.getText() for id_ in ctx.IDENTIFIER()]
+    # Visit a parse tree produced by RulesParser#nameBlock.
+    def visitNameBlock(self, ctx:RulesParser.NameBlockContext):
+        return self.visitChildren(ctx)
 
-    def visitConditionsBlock(self, ctx: RulesParser.ConditionsBlockContext):
-        return [self.visit(expr) for expr in ctx.expr()]
 
-    def visitExpr(self, ctx: RulesParser.ExprContext):
-        identifiers = ctx.IDENTIFIER()
-        key = identifiers[0].getText()
+    # Visit a parse tree produced by RulesParser#nameAdjBlock.
+    def visitNameAdjBlock(self, ctx:RulesParser.NameAdjBlockContext):
+        return self.visitChildren(ctx)
 
-        if ctx.STRING():
-            value = ctx.STRING().getText()
-        elif ctx.NUMBER():
-            value = ctx.NUMBER().getText()
-        elif len(identifiers) == 2:
-            value = identifiers[1].getText()
-        elif ctx.expr():
-            inner = " ".join(self.visit(e) for e in ctx.expr())
-            value = f"{{ {inner} }}"
-        else:
-            raise ValueError("Unrecognized expression format")
 
-        return f"{key} = {value}"
+    # Visit a parse tree produced by RulesParser#tagsBlock.
+    def visitTagsBlock(self, ctx:RulesParser.TagsBlockContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RulesParser#conditionsBlock.
+    def visitConditionsBlock(self, ctx:RulesParser.ConditionsBlockContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RulesParser#expr.
+    def visitExpr(self, ctx:RulesParser.ExprContext):
+        return self.visitChildren(ctx)
+
 
 
 del RulesParser

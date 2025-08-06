@@ -10,28 +10,31 @@ else:
 
 def serializedATN():
     return [
-        4,1,11,71,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,1,0,4,
-        0,14,8,0,11,0,12,0,15,1,0,1,0,1,1,1,1,1,1,1,1,1,1,3,1,25,8,1,1,1,
-        3,1,28,8,1,1,1,1,1,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,4,3,40,8,3,11,
-        3,12,3,41,1,3,1,3,1,4,1,4,1,4,1,4,4,4,50,8,4,11,4,12,4,51,1,4,1,
-        4,1,5,1,5,1,5,1,5,4,5,60,8,5,11,5,12,5,61,1,5,1,5,1,5,1,5,1,5,3,
-        5,69,8,5,1,5,0,0,6,0,2,4,6,8,10,0,0,73,0,13,1,0,0,0,2,19,1,0,0,0,
-        4,31,1,0,0,0,6,35,1,0,0,0,8,45,1,0,0,0,10,55,1,0,0,0,12,14,3,2,1,
-        0,13,12,1,0,0,0,14,15,1,0,0,0,15,13,1,0,0,0,15,16,1,0,0,0,16,17,
-        1,0,0,0,17,18,5,0,0,1,18,1,1,0,0,0,19,20,5,7,0,0,20,21,5,1,0,0,21,
-        22,5,2,0,0,22,24,3,4,2,0,23,25,3,6,3,0,24,23,1,0,0,0,24,25,1,0,0,
-        0,25,27,1,0,0,0,26,28,3,8,4,0,27,26,1,0,0,0,27,28,1,0,0,0,28,29,
-        1,0,0,0,29,30,5,3,0,0,30,3,1,0,0,0,31,32,5,4,0,0,32,33,5,1,0,0,33,
-        34,5,8,0,0,34,5,1,0,0,0,35,36,5,5,0,0,36,37,5,1,0,0,37,39,5,2,0,
-        0,38,40,5,7,0,0,39,38,1,0,0,0,40,41,1,0,0,0,41,39,1,0,0,0,41,42,
-        1,0,0,0,42,43,1,0,0,0,43,44,5,3,0,0,44,7,1,0,0,0,45,46,5,6,0,0,46,
-        47,5,1,0,0,47,49,5,2,0,0,48,50,3,10,5,0,49,48,1,0,0,0,50,51,1,0,
-        0,0,51,49,1,0,0,0,51,52,1,0,0,0,52,53,1,0,0,0,53,54,5,3,0,0,54,9,
-        1,0,0,0,55,56,5,7,0,0,56,68,5,1,0,0,57,59,5,2,0,0,58,60,3,10,5,0,
-        59,58,1,0,0,0,60,61,1,0,0,0,61,59,1,0,0,0,61,62,1,0,0,0,62,63,1,
-        0,0,0,63,64,5,3,0,0,64,69,1,0,0,0,65,69,5,7,0,0,66,69,5,8,0,0,67,
-        69,5,9,0,0,68,57,1,0,0,0,68,65,1,0,0,0,68,66,1,0,0,0,68,67,1,0,0,
-        0,69,11,1,0,0,0,7,15,24,27,41,51,61,68
+        4,1,12,80,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,1,0,4,0,16,8,0,11,0,12,0,17,1,0,1,0,1,1,1,1,1,1,1,1,1,1,3,1,27,
+        8,1,1,1,3,1,30,8,1,1,1,3,1,33,8,1,1,1,1,1,1,2,1,2,1,2,1,2,1,3,1,
+        3,1,3,1,3,1,4,1,4,1,4,1,4,4,4,49,8,4,11,4,12,4,50,1,4,1,4,1,5,1,
+        5,1,5,1,5,4,5,59,8,5,11,5,12,5,60,1,5,1,5,1,6,1,6,1,6,1,6,4,6,69,
+        8,6,11,6,12,6,70,1,6,1,6,1,6,1,6,1,6,3,6,78,8,6,1,6,0,0,7,0,2,4,
+        6,8,10,12,0,0,82,0,15,1,0,0,0,2,21,1,0,0,0,4,36,1,0,0,0,6,40,1,0,
+        0,0,8,44,1,0,0,0,10,54,1,0,0,0,12,64,1,0,0,0,14,16,3,2,1,0,15,14,
+        1,0,0,0,16,17,1,0,0,0,17,15,1,0,0,0,17,18,1,0,0,0,18,19,1,0,0,0,
+        19,20,5,0,0,1,20,1,1,0,0,0,21,22,5,8,0,0,22,23,5,1,0,0,23,24,5,2,
+        0,0,24,26,3,4,2,0,25,27,3,6,3,0,26,25,1,0,0,0,26,27,1,0,0,0,27,29,
+        1,0,0,0,28,30,3,8,4,0,29,28,1,0,0,0,29,30,1,0,0,0,30,32,1,0,0,0,
+        31,33,3,10,5,0,32,31,1,0,0,0,32,33,1,0,0,0,33,34,1,0,0,0,34,35,5,
+        3,0,0,35,3,1,0,0,0,36,37,5,4,0,0,37,38,5,1,0,0,38,39,5,9,0,0,39,
+        5,1,0,0,0,40,41,5,5,0,0,41,42,5,1,0,0,42,43,5,9,0,0,43,7,1,0,0,0,
+        44,45,5,6,0,0,45,46,5,1,0,0,46,48,5,2,0,0,47,49,5,8,0,0,48,47,1,
+        0,0,0,49,50,1,0,0,0,50,48,1,0,0,0,50,51,1,0,0,0,51,52,1,0,0,0,52,
+        53,5,3,0,0,53,9,1,0,0,0,54,55,5,7,0,0,55,56,5,1,0,0,56,58,5,2,0,
+        0,57,59,3,12,6,0,58,57,1,0,0,0,59,60,1,0,0,0,60,58,1,0,0,0,60,61,
+        1,0,0,0,61,62,1,0,0,0,62,63,5,3,0,0,63,11,1,0,0,0,64,65,5,8,0,0,
+        65,77,5,1,0,0,66,68,5,2,0,0,67,69,3,12,6,0,68,67,1,0,0,0,69,70,1,
+        0,0,0,70,68,1,0,0,0,70,71,1,0,0,0,71,72,1,0,0,0,72,73,5,3,0,0,73,
+        78,1,0,0,0,74,78,5,8,0,0,75,78,5,9,0,0,76,78,5,10,0,0,77,66,1,0,
+        0,0,77,74,1,0,0,0,77,75,1,0,0,0,77,76,1,0,0,0,78,13,1,0,0,0,8,17,
+        26,29,32,50,60,70,77
     ]
 
 class RulesParser ( Parser ):
@@ -44,22 +47,23 @@ class RulesParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'='", "'{'", "'}'", "'name'", "'tags'", 
-                     "'conditions'" ]
+    literalNames = [ "<INVALID>", "'='", "'{'", "'}'", "'name'", "'name_adj'", 
+                     "'tags'", "'conditions'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "IDENTIFIER", 
-                      "STRING", "NUMBER", "WS", "COMMENT" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "IDENTIFIER", "STRING", "NUMBER", "WS", "COMMENT" ]
 
     RULE_root = 0
     RULE_ruleObject = 1
     RULE_nameBlock = 2
-    RULE_tagsBlock = 3
-    RULE_conditionsBlock = 4
-    RULE_expr = 5
+    RULE_nameAdjBlock = 3
+    RULE_tagsBlock = 4
+    RULE_conditionsBlock = 5
+    RULE_expr = 6
 
-    ruleNames =  [ "root", "ruleObject", "nameBlock", "tagsBlock", "conditionsBlock", 
-                   "expr" ]
+    ruleNames =  [ "root", "ruleObject", "nameBlock", "nameAdjBlock", "tagsBlock", 
+                   "conditionsBlock", "expr" ]
 
     EOF = Token.EOF
     T__0=1
@@ -68,11 +72,12 @@ class RulesParser ( Parser ):
     T__3=4
     T__4=5
     T__5=6
-    IDENTIFIER=7
-    STRING=8
-    NUMBER=9
-    WS=10
-    COMMENT=11
+    T__6=7
+    IDENTIFIER=8
+    STRING=9
+    NUMBER=10
+    WS=11
+    COMMENT=12
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -127,19 +132,19 @@ class RulesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 13 
+            self.state = 15 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 12
+                self.state = 14
                 self.ruleObject()
-                self.state = 15 
+                self.state = 17 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==7):
+                if not (_la==8):
                     break
 
-            self.state = 17
+            self.state = 19
             self.match(RulesParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
@@ -162,6 +167,10 @@ class RulesParser ( Parser ):
 
         def nameBlock(self):
             return self.getTypedRuleContext(RulesParser.NameBlockContext,0)
+
+
+        def nameAdjBlock(self):
+            return self.getTypedRuleContext(RulesParser.NameAdjBlockContext,0)
 
 
         def tagsBlock(self):
@@ -199,31 +208,39 @@ class RulesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 19
-            self.match(RulesParser.IDENTIFIER)
-            self.state = 20
-            self.match(RulesParser.T__0)
             self.state = 21
-            self.match(RulesParser.T__1)
+            self.match(RulesParser.IDENTIFIER)
             self.state = 22
-            self.nameBlock()
+            self.match(RulesParser.T__0)
+            self.state = 23
+            self.match(RulesParser.T__1)
             self.state = 24
+            self.nameBlock()
+            self.state = 26
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==5:
-                self.state = 23
-                self.tagsBlock()
-
-
-            self.state = 27
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            if _la==6:
-                self.state = 26
-                self.conditionsBlock()
+                self.state = 25
+                self.nameAdjBlock()
 
 
             self.state = 29
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==6:
+                self.state = 28
+                self.tagsBlock()
+
+
+            self.state = 32
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==7:
+                self.state = 31
+                self.conditionsBlock()
+
+
+            self.state = 34
             self.match(RulesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -271,12 +288,64 @@ class RulesParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_nameBlock)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 31
+            self.state = 36
             self.match(RulesParser.T__3)
-            self.state = 32
+            self.state = 37
             self.match(RulesParser.T__0)
-            self.state = 33
+            self.state = 38
             localctx.name = self.match(RulesParser.STRING)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NameAdjBlockContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self.name_adj = None # Token
+
+        def STRING(self):
+            return self.getToken(RulesParser.STRING, 0)
+
+        def getRuleIndex(self):
+            return RulesParser.RULE_nameAdjBlock
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNameAdjBlock" ):
+                listener.enterNameAdjBlock(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNameAdjBlock" ):
+                listener.exitNameAdjBlock(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNameAdjBlock" ):
+                return visitor.visitNameAdjBlock(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def nameAdjBlock(self):
+
+        localctx = RulesParser.NameAdjBlockContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_nameAdjBlock)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 40
+            self.match(RulesParser.T__4)
+            self.state = 41
+            self.match(RulesParser.T__0)
+            self.state = 42
+            localctx.name_adj = self.match(RulesParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -323,29 +392,29 @@ class RulesParser ( Parser ):
     def tagsBlock(self):
 
         localctx = RulesParser.TagsBlockContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_tagsBlock)
+        self.enterRule(localctx, 8, self.RULE_tagsBlock)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 35
-            self.match(RulesParser.T__4)
-            self.state = 36
+            self.state = 44
+            self.match(RulesParser.T__5)
+            self.state = 45
             self.match(RulesParser.T__0)
-            self.state = 37
+            self.state = 46
             self.match(RulesParser.T__1)
-            self.state = 39 
+            self.state = 48 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 38
+                self.state = 47
                 localctx.tag = self.match(RulesParser.IDENTIFIER)
-                self.state = 41 
+                self.state = 50 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==7):
+                if not (_la==8):
                     break
 
-            self.state = 43
+            self.state = 52
             self.match(RulesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -394,29 +463,29 @@ class RulesParser ( Parser ):
     def conditionsBlock(self):
 
         localctx = RulesParser.ConditionsBlockContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_conditionsBlock)
+        self.enterRule(localctx, 10, self.RULE_conditionsBlock)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 45
-            self.match(RulesParser.T__5)
-            self.state = 46
+            self.state = 54
+            self.match(RulesParser.T__6)
+            self.state = 55
             self.match(RulesParser.T__0)
-            self.state = 47
+            self.state = 56
             self.match(RulesParser.T__1)
-            self.state = 49 
+            self.state = 58 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 48
+                self.state = 57
                 localctx.condition = self.expr()
-                self.state = 51 
+                self.state = 60 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==7):
+                if not (_la==8):
                     break
 
-            self.state = 53
+            self.state = 62
             self.match(RulesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -433,7 +502,7 @@ class RulesParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.id_ = None # Token
+            self.identifier = None # Token
             self.value = None # Token
 
         def IDENTIFIER(self, i:int=None):
@@ -478,45 +547,45 @@ class RulesParser ( Parser ):
     def expr(self):
 
         localctx = RulesParser.ExprContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_expr)
+        self.enterRule(localctx, 12, self.RULE_expr)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 55
-            localctx.id_ = self.match(RulesParser.IDENTIFIER)
-            self.state = 56
+            self.state = 64
+            localctx.identifier = self.match(RulesParser.IDENTIFIER)
+            self.state = 65
             self.match(RulesParser.T__0)
-            self.state = 68
+            self.state = 77
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [2]:
-                self.state = 57
+                self.state = 66
                 localctx.value = self.match(RulesParser.T__1)
-                self.state = 59 
+                self.state = 68 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
-                    self.state = 58
+                    self.state = 67
                     self.expr()
-                    self.state = 61 
+                    self.state = 70 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not (_la==7):
+                    if not (_la==8):
                         break
 
-                self.state = 63
+                self.state = 72
                 self.match(RulesParser.T__2)
                 pass
-            elif token in [7]:
-                self.state = 65
+            elif token in [8]:
+                self.state = 74
                 self.match(RulesParser.IDENTIFIER)
                 pass
-            elif token in [8]:
-                self.state = 66
+            elif token in [9]:
+                self.state = 75
                 self.match(RulesParser.STRING)
                 pass
-            elif token in [9]:
-                self.state = 67
+            elif token in [10]:
+                self.state = 76
                 self.match(RulesParser.NUMBER)
                 pass
             else:
