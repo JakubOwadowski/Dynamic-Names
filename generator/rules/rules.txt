@@ -25,6 +25,41 @@ EMPIRE = {
         has_reform = monarchy_mechanic
         government_rank = 3
         is_emperor = no
+        NOT = {
+            OR = {
+                culture_group = east_asian
+                culture_group = tibetan_group
+                culture_group = thai_group
+                culture_group = southeastasian_group
+                culture_group = burman
+                culture_group = malay
+                culture_group = hindusthani
+                culture_group = dravidian
+                culture_group = central_indic
+                culture_group = eastern_aryan
+            }
+        }
+    }
+}
+
+EMPIRE_ASIAN = {
+    name = "Empire of {NAME}"
+    conditions = {
+        has_reform = monarchy_mechanic
+        government_rank = 3
+        is_emperor = no
+        OR = {
+            culture_group = east_asian
+            culture_group = tibetan_group
+            culture_group = thai_group
+            culture_group = southeastasian_group
+            culture_group = burman
+            culture_group = malay
+            culture_group = hindusthani
+            culture_group = dravidian
+            culture_group = central_indic
+            culture_group = eastern_aryan
+        }
     }
 }
 
@@ -3030,6 +3065,14 @@ SIQ = {
     }
     conditions = {
         has_country_flag = is_SIQ_flag
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
