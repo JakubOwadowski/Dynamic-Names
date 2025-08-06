@@ -262,7 +262,7 @@ def add_eyalets():
                 continue
             name, tags = map(str.strip, line.split(",", 1))
             rule = Rule(
-                name=name,
+                name=f"Eyalet-i {name}",
                 id=f"EY{n}",
                 tags=tags.split(","),
                 conditions=[

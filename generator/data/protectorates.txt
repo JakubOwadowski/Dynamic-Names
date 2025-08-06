@@ -1,3 +1,4 @@
+# Region, Name
 central_asia_region,Anxi Protectorate
 manchuria_region,Andong Protectorate
 indo_china_region,Annan Protectorate

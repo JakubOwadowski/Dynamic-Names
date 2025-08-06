@@ -20,7 +20,7 @@ KINGDOM = {
 }
 
 EMPIRE = {
-    name = "Empire of {NAME}"
+    name = "{NAME_ADJ} Empire"
     conditions = {
         has_reform = monarchy_mechanic
         government_rank = 3
@@ -232,6 +232,9 @@ MAJIN_KINGDOM = {
         }
         government = theocracy
         government_rank = 2
+        NOT = {
+            government_rank = 3
+        }
     }
 }
 
@@ -623,6 +626,14 @@ EMIRATE = {
         NOT = {
             government_rank = 2
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -654,6 +665,14 @@ DYNASTY_EMIRATE = {
         NOT = {
             has_reform = mamluk_government
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -683,6 +702,14 @@ SULTANATE = {
         government_rank = 2
         NOT = {
             government_rank = 3
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -1491,6 +1518,14 @@ SHEIKHDOM = {
         NOT = {
             government_rank = 2
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1504,6 +1539,14 @@ DYNASTY_SHEIKHDOM = {
         }
         NOT = {
             government_rank = 2
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -1521,6 +1564,14 @@ SHAHDOM = {
         NOT = {
             government_rank = 3
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1536,6 +1587,14 @@ DYNASTY_SHAHDOM = {
         government_rank = 2
         NOT = {
             government_rank = 3
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -1562,6 +1621,14 @@ MALIKATE = {
                 }
             }
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1577,6 +1644,14 @@ TRIBAL_SULTANATE = {
         NOT = {
             government_rank = 3
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1588,6 +1663,22 @@ TRIBAL_SHEIKHDOM = {
         government = tribal
         NOT = {
             government_rank = 2
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -1601,6 +1692,14 @@ TRIBAL_EMIRATE = {
         NOT = {
             government_rank = 3
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1613,6 +1712,14 @@ GREAT_EMIRATE = {
             has_reform = steppe_horde
         }
         government_rank = 3
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1639,6 +1746,14 @@ NAJRAN_EMIRATE = {
         religion_group = muslim
         NOT = {
             government_rank = 2
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -1682,6 +1797,14 @@ SHARIFATE = {
         NOT = {
             government_rank = 2
         }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
+        }
     }
 }
 
@@ -1720,6 +1843,14 @@ GREAT_SHARIFATE = {
         government_rank = 2
         NOT = {
             government_rank = 3
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }
@@ -2232,6 +2363,14 @@ SHEIKHDOM_RELIGIOUS = {
         }
         NOT = {
             government_rank = 2
+        }
+        NOT = {
+            OR = {
+                is_subject_of_type = eyalet
+                is_subject_of_type = core_eyalet
+                has_reform = barbary_eyalet_government
+                has_reform = eyalet_government
+            }
         }
     }
 }

@@ -1,3 +1,5 @@
+# Name, Tags
+# Original Eyalets
 Macaristan,HUN
 Slovakya,SLO
 Erdel,TRA
@@ -5,8 +7,8 @@ Avusturya,HAB
 Lombardiya,MLO,FER,SAV
 Sicilya,SIC
 Roma,PAP
-Misir,EGY
-Trâblus Gârbsir,TRP
+Misir,EGY,MAM
+Trâblus Gârb,TRP
 Tunus,TUN
 Cezayir-i Gârb,ALG,TLC
 Endülüs,ADU,GRA
@@ -16,4 +18,26 @@ Venedik,VEN
 Cenova,GEN
 Fas,MOR,SOS,MRK,TFL,TET,FEZ
 Yemen,YEM,ADE,RAS
-    
+
+# Additional Eyalets
+Trabzon,TRE
+Karaman,KAR
+Bosna,BOS
+Basra,BSR
+Sirvan,SRV
+Sam,SYR
+Girid,CRT
+Mora,MOE
+Hersek,HRZ
+Kirim,CRI
+Diyarbekir,AKK,HSN,BTL
+Musul,QAR
+Bagdat,IRQ
+Zülkadriye,DUL
+Cerkesya,CIR
+Kibris,CYP
+Korsika,COR
+Sardinya,SAR
+Rumeli,BUL
+Sirbistan,SER
+Arabistan,ARB
