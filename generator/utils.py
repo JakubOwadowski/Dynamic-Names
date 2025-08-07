@@ -106,74 +106,64 @@ def add_to_dict(dict: dict, key: str, value: str):
     return dict
 
 
-# Feudatories for each area in China
-def add_feudatories():
-    with open("data/feudatories.txt", encoding="utf-8-sig") as f:
-        rules = []
+def add_subject_rules(file_path, id_prefix, overlord_condition):
+    rules = []
+    with open(file_path, encoding="utf-8-sig") as f:
         for line in f:
             line = line.strip()
             if line.startswith("#") or not line:
                 continue
-            area, name = map(str.strip, line.split(",", 1))
-            rule = Rule(
-                name=name,
-                id=f"FEUD_{area.upper()}",
-                conditions=[
-                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
-                    "overlord = { is_emperor_of_china = yes }",
-                    f"capital_scope = {{ area = {area} }}",
-                ],
+            key, name = map(str.strip, line.split(",", 1))
+
+            # Detect scope variable
+            if key.endswith("_superregion"):
+                scope_var = "superregion"
+            elif key.endswith("_region"):
+                scope_var = "region"
+            elif key.endswith("_area"):
+                scope_var = "area"
+            else:
+                raise ValueError(f"Unknown scope type for key: {key}")
+
+            rules.append(
+                Rule(
+                    name=name,
+                    id=f"{id_prefix}_{key.upper()}",
+                    conditions=[
+                        "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
+                        f"overlord = { {overlord_condition} }",
+                        f"capital_scope = {{ {scope_var} = {key} }}",
+                    ],
+                )
             )
-            rules.append(rule)
-        return rules
+    return rules
+
+
+# Feudatories for each area in China
+def add_feudatories():
+    return add_subject_rules(
+        file_path="data/feudatories.txt",
+        id_prefix="FEUD",
+        overlord_condition="is_emperor_of_china = yes",
+    )
 
 
 # Tang-style Chinese protectorates for each region surrounding China
 def add_protectorates():
-    with open("data/protectorates.txt", encoding="utf-8-sig") as f:
-        rules = []
-        for line in f:
-            line = line.strip()
-            if line.startswith("#") or not line:
-                continue
-            region, name = map(str.strip, line.split(",", 1))
-            rule = Rule(
-                name=name,
-                id=f"PROT_{region.upper()}",
-                conditions=[
-                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
-                    "overlord = { is_emperor_of_china = yes }",
-                    f"capital_scope = {{ region = {region} }}",
-                ],
-            )
-            rules.append(rule)
-        return rules
+    return add_subject_rules(
+        file_path="data/protectorates.txt",
+        id_prefix="PROT",
+        overlord_condition="is_emperor_of_china = yes",
+    )
 
 
 # Japanese puppet states
 def add_jap_puppets():
-    with open("data/japanese_puppets.txt", encoding="utf-8-sig") as f:
-        rules = []
-        for line in f:
-            line = line.strip()
-            if line.startswith("#") or not line:
-                continue
-            region, name = map(str.strip, line.split(",", 1))
-            if region == "china_superregion":
-                variable = "superregion"
-            else:
-                variable = "region"
-            rule = Rule(
-                name=name,
-                id=f"JAP_PUPPET_{region.upper()}",
-                conditions=[
-                    "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
-                    "overlord = { tag = JAP }",
-                    f"capital_scope = {{ {variable} = {region} }}",
-                ],
-            )
-            rules.append(rule)
-        return rules
+    return add_subject_rules(
+        file_path="data/japanese_puppets.txt",
+        id_prefix="JAP_PUPPET",
+        overlord_condition="culture_group = japanese_g",
+    )
 
 
 # Adds different names for the Emperor of China based on their primary culture
@@ -207,6 +197,8 @@ def add_korean_dynasties():
                 "{id}_K",
                 [
                     "has_reform = monarchy_mechanic",
+                    "government_rank = 2",
+                    "NOT = { government_rank = 3 }",
                 ],
             ),
             (

@@ -97,6 +97,8 @@ KLK: "Republic of Mongolia"
 KLK_ADJ: "Mongolian"
 
 # Far East
+ANU: "Republic of Ezo"
+ANU_ADJ: "Ezoan"
 
 # Northern Africa
 MRK: "Republic of Salé"

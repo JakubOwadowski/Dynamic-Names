@@ -4,3 +4,4 @@ manchuria_region,Manchukoku
 korea_region,Chosenkoku
 moluccas_region,Firipinkoku
 mongolia_region,Mokokoku
+hokkaido_area,Ezo

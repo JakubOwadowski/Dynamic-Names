@@ -1,6 +1,11 @@
 # Culture, Name
+# Regular Korean name depends on dynasty
 japanese,Great Nihon
+tibetan,Great Bod
 vietnamese,Great Viet
+
+# Sinicized
+# If Japan had a sinicized culture variant, I would've named it Great Wa
 korean_new,Great Zhonghan
 zhuang_new,Great Zhuang
 tibetan_new,Great Zang
