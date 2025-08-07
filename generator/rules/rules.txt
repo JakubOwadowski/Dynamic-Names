@@ -254,43 +254,6 @@ HOLY_EMPIRE = {
     }
 }
 
-MAJIN_KINGDOM = {
-    name = "Kingdom of Majin"
-    name_adj = "Majinese"
-    tags = {
-        KOR
-    }
-    conditions = {
-        OR = {
-            religion = buddhism
-            religion = vajrayana
-            religion = mahayana
-        }
-        government = theocracy
-        government_rank = 2
-        NOT = {
-            government_rank = 3
-        }
-    }
-}
-
-MAJIN_EMPIRE = {
-    name = "Empire of Majin"
-    name_adj = "Majinese"
-    tags = {
-        KOR
-    }
-    conditions = {
-        OR = {
-            religion = buddhism
-            religion = vajrayana
-            religion = mahayana
-        }
-        government = theocracy
-        government_rank = 3
-    }
-}
-
 METROPOLIS = {
     name = "Metropolis of {NAME}"
     conditions = {
