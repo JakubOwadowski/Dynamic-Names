@@ -619,6 +619,7 @@ HETMANATE = {
         NOT = {
             government_rank = 2
         }
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -628,6 +629,7 @@ GRAND_HETMANATE = {
         government = republic
         has_reform = cossacks_reform
         government_rank = 2
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -1737,6 +1739,7 @@ TRIBAL_EMIRATE = {
                 has_reform = eyalet_government
             }
         }
+        is_revolutionary_republic_trigger = no
     }
 }
 
@@ -1792,6 +1795,7 @@ NAJRAN_EMIRATE = {
                 has_reform = eyalet_government
             }
         }
+        is_revolutionary_republic_trigger = no
     }
 }
 
