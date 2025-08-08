@@ -1,8 +1,3 @@
-from parser.RulesBuilder import RulesBuilder
-from parser.RulesLexer import RulesLexer
-from parser.RulesParser import RulesParser
-
-from antlr4 import *
 from classes.Localisation import Localisation
 from classes.Rule import Rule
 from defines.defines import *
@@ -61,14 +56,30 @@ def get_dynasty_name(rule_name: str, dynasty_name: str) -> str:
 
 
 def read_rules() -> list[Rule]:
-    input_stream = FileStream(RULES_PATH, encoding="utf-8-sig")
-    lexer = RulesLexer(input_stream)
-    token_stream = CommonTokenStream(lexer)
-    parser = RulesParser(token_stream)
-    tree = parser.root()
+    import pyradox
 
-    visitor = RulesBuilder()
-    return visitor.visit(tree)
+    data = pyradox.txt.parse_file(
+        path=RULES_PATH,
+        game="EU4",
+        path_relative_to_game=False,
+    )
+
+    rules = []
+    for key, rule in data.items():
+        rules.append(
+            Rule(
+                id=key,
+                name=rule["name"],
+                name_adj=rule["name_adj"],
+                tags=list(rule["tags"].values()) if rule["tags"] else [],
+                conditions=(
+                    [" ".join(map(str.strip, str(rule["conditions"]).split("\n")))]
+                    if rule["conditions"]
+                    else []
+                ),
+            )
+        )
+    return rules
 
 
 def read_tag_names(file_path: str) -> dict[str, Localisation]:
@@ -139,7 +150,7 @@ def add_subject_rules(file_path, id_prefix, overlord_condition):
                 id=f"{id_prefix}_{key.upper()}",
                 conditions=[
                     "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
-                    f"overlord = {{ {overlord_condition} }}"
+                    f"overlord = {{ {overlord_condition} }}",
                     f"capital_scope = {{ {get_scope(key)} = {key} }}",
                 ],
             )

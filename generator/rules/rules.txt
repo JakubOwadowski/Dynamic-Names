@@ -350,7 +350,7 @@ HORDE = {
 }
 
 TUMEN = {
-    name = "{NAME_ADJ} Tümen"
+    name = "{NAME_ADJ} Tumen"
     conditions = {
         has_reform = steppe_horde
         is_march = yes
@@ -533,7 +533,7 @@ FEDERAL_REPUBLIC_GERMANY = {
 AMBROSIAN_REPUBLIC = {
     name = "The Ambrosian Republic"
     tags = {
-        MLO
+        tag = MLO
     }
     conditions = {
         has_reform = ambrosian_republic
@@ -1055,10 +1055,10 @@ IRISH_HIGH_KINGDOM = {
 EARLDOM = {
     name = "Earldom of {NAME}"
     tags = {
-        DMS
-        ORD
-        KID
-        ULS
+        tag = DMS
+        tag = ORD
+        tag = KID
+        tag = ULS
     }
     conditions = {
         primary_culture = irish
@@ -1301,7 +1301,7 @@ KHEDIVATE = {
 QING_KHANATE = {
     name = "Qing Khanate"
     tags = {
-        QNG
+        tag = QNG
     }
     conditions = {
         government = monarchy
@@ -1411,7 +1411,7 @@ HRE_EMPEROR_DUCHY = {
 LANDGRAVIATE = {
     name = "Landgraviate of {NAME}"
     tags = {
-        HES
+        tag = HES
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -1731,7 +1731,7 @@ GREAT_EMIRATE = {
 MALI_KINGDOM = {
     name = "Kingdom of Mali"
     tags = {
-        MAL
+        tag = MAL
     }
     conditions = {
         government = monarchy
@@ -1745,7 +1745,7 @@ MALI_KINGDOM = {
 NAJRAN_EMIRATE = {
     name = "Emirate of Najran"
     tags = {
-        NJR
+        tag = NJR
     }
     conditions = {
         religion_group = muslim
@@ -1767,7 +1767,7 @@ NAJRAN_EMIRATE = {
 AVAR_KHANATE = {
     name = "Avar Khanate"
     tags = {
-        AVR
+        tag = AVR
     }
     conditions = {
         government = monarchy
@@ -1780,7 +1780,7 @@ AVAR_KHANATE = {
 AVAR_KHAGANATE = {
     name = "Avar Khaganate"
     tags = {
-        AVR
+        tag = AVR
     }
     conditions = {
         government = monarchy
@@ -1975,7 +1975,7 @@ ELECTORATE_BISHOPRIC = {
 HERCEGSEG = {
     name = "Duchy of Saint Sava"
     tags = {
-        HRZ
+        tag = HRZ
     }
     conditions = {
         government = monarchy
@@ -1988,7 +1988,7 @@ HERCEGSEG = {
 GRAND_HERCEGSEG = {
     name = "Kingdom of Saint Sava"
     tags = {
-        HRZ
+        tag = HRZ
     }
     conditions = {
         government = monarchy
@@ -2002,7 +2002,7 @@ GRAND_HERCEGSEG = {
 COUNTY_PALATINE = {
     name = "Palatinate of the Rhine"
     tags = {
-        PAL
+        tag = PAL
     }
     conditions = {
         government = monarchy
@@ -2015,7 +2015,7 @@ COUNTY_PALATINE = {
 PAPACY = {
     name = "The Papal State"
     tags = {
-        PAP
+        tag = PAP
     }
 }
 
@@ -2112,7 +2112,7 @@ OTTOMAN_MARCH = {
 ILKHANATE = {
     name = "The Ilkhanate"
     tags = {
-        ILK
+        tag = ILK
     }
     conditions = {
         OR = {
@@ -2124,7 +2124,7 @@ ILKHANATE = {
 SYNTH_GOV = {
     name = "The Synthetics"
     tags = {
-        SYN
+        tag = SYN
     }
     conditions = {
         OR = {
@@ -2654,7 +2654,7 @@ BREWING_EMPIRE = {
 NIGHTS_WATCH = {
     name = "The Night's Watch"
     tags = {
-        NOL
+        tag = NOL
     }
     conditions = {
         has_reform = monastic_order_reform
@@ -2675,7 +2675,7 @@ NIGHTS_WATCH = {
 THE_NORTH = {
     name = "Empire of the North"
     tags = {
-        NOL
+        tag = NOL
     }
     conditions = {
         has_reform = monastic_order_reform
@@ -2832,14 +2832,14 @@ DAIMYO = {
 USA = {
     name = "United States of America"
     tags = {
-        USA
+        tag = USA
     }
 }
 
 USA_K = {
     name = "United Sovereign Archduchy"
     tags = {
-        USA
+        tag = USA
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -2849,7 +2849,7 @@ USA_K = {
 USA_T = {
     name = "United Synods of America"
     tags = {
-        USA
+        tag = USA
     }
     conditions = {
         government = theocracy
@@ -2880,7 +2880,7 @@ MAMLUK_SULTAN = {
 IMPERIAL_COMMONWEALTH = {
     name = "Imperial Commonwealth"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government_rank = 3
@@ -2890,7 +2890,7 @@ IMPERIAL_COMMONWEALTH = {
 IMPERIUM_OF_MANN = {
     name = "Imperium of Mann"
     tags = {
-        KOI
+        tag = KOI
     }
     conditions = {
         government_rank = 3
@@ -2900,8 +2900,8 @@ IMPERIUM_OF_MANN = {
 FIFTH_MONARCHY = {
     name = "The Fifth Monarchy"
     tags = {
-        GBR
-        ENG
+        tag = GBR
+        tag = ENG
     }
     conditions = {
         has_reform = fifth_monarchists_reform
@@ -2911,7 +2911,7 @@ FIFTH_MONARCHY = {
 VOIEVODESHIP_TRA = {
     name = "Voievodeship of {NAME}"
     tags = {
-        TRA
+        tag = TRA
     }
     conditions = {
         is_subject = yes
@@ -2921,7 +2921,7 @@ VOIEVODESHIP_TRA = {
 LPC_DUCHY = {
     name = "Duchy of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -2935,7 +2935,7 @@ LPC_DUCHY = {
 LPC_KINGDOM = {
     name = "Kingdom of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -2950,7 +2950,7 @@ LPC_KINGDOM = {
 PLC_REPUBLIC = {
     name = "Commonwealth of Poland-Lithuania"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government = republic
@@ -2960,7 +2960,7 @@ PLC_REPUBLIC = {
 LPC_REPUBLIC = {
     name = "Commonwealth of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government = republic
@@ -2971,7 +2971,7 @@ LPC_REPUBLIC = {
 LPC_BISHOPRIC = {
     name = "Bishopric of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government = theocracy
@@ -2985,7 +2985,7 @@ LPC_BISHOPRIC = {
 LPC_ARCHBISHOPRIC = {
     name = "Archbishopric of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government = theocracy
@@ -3000,7 +3000,7 @@ LPC_ARCHBISHOPRIC = {
 LPC_PATRIARCHATE = {
     name = "Patriarchate of Lithuania-Poland"
     tags = {
-        PLC
+        tag = PLC
     }
     conditions = {
         government = theocracy
@@ -3012,7 +3012,7 @@ LPC_PATRIARCHATE = {
 COMMONWEALTH_GBR = {
     name = "Commonwealth of Britain"
     tags = {
-        GBR
+        tag = GBR
     }
     conditions = {
         has_reform = protectorate_parliament_reform
@@ -3022,7 +3022,7 @@ COMMONWEALTH_GBR = {
 KINGDOM_OF_GOD = {
     name = "Kingdom of God"
     tags = {
-        PAP
+        tag = PAP
     }
     conditions = {
         has_country_flag = is_kingdom_of_god_flag
@@ -3032,7 +3032,7 @@ KINGDOM_OF_GOD = {
 SIQ = {
     name = "Siqilliya"
     tags = {
-        SIC
+        tag = SIC
     }
     conditions = {
         has_country_flag = is_SIQ_flag
@@ -3050,7 +3050,7 @@ SIQ = {
 TRK = {
     name = "Devlet-i Rûm"
     tags = {
-        TUR
+        tag = TUR
     }
     conditions = {
         has_country_flag = is_TRK_flag
@@ -3060,7 +3060,7 @@ TRK = {
 GREAT_HORDE = {
     name = "Great Horde"
     tags = {
-        GOL
+        tag = GOL
     }
     conditions = {
         has_reform = steppe_horde
@@ -3075,7 +3075,7 @@ GREAT_HORDE = {
 GOLDEN_HORDE = {
     name = "Golden Horde"
     tags = {
-        GLH
+        tag = GLH
     }
     conditions = {
         has_reform = steppe_horde
@@ -3090,8 +3090,8 @@ GOLDEN_HORDE = {
 TSARDOM = {
     name = "Tsardom of {NAME}"
     tags = {
-        RUS
-        BUL
+        tag = RUS
+        tag = BUL
     }
     conditions = {
         OR = {
@@ -3109,13 +3109,13 @@ TSARDOM = {
 CROWN_SPANISH = {
     name = "Crown of {NAME}"
     tags = {
-        ARA
-        CAS
-        LON
-        ASU
-        NAV
-        VAL
-        CAT
+        tag = ARA
+        tag = CAS
+        tag = LON
+        tag = ASU
+        tag = NAV
+        tag = VAL
+        tag = CAT
     }
     conditions = {
         government_rank = 2
@@ -3126,8 +3126,8 @@ CROWN_SPANISH = {
 CROWN_CZECH = {
     name = "Crown of {NAME}"
     tags = {
-        BOH
-        MVA
+        tag = BOH
+        tag = MVA
     }
     conditions = {
         government_rank = 2
@@ -3138,7 +3138,7 @@ CROWN_CZECH = {
 DUCAL_PRUSSIA = {
     name = "Ducal Prussia"
     tags = {
-        PRU
+        tag = PRU
     }
     conditions = {
         is_subject = yes
@@ -3151,8 +3151,8 @@ DUCAL_PRUSSIA = {
 LATER_JIN = {
     name = "Later Jin"
     tags = {
-        MJZ
-        MCH
+        tag = MJZ
+        tag = MCH
     }
     conditions = {
         mission_completed = mch_proclaim_later_jin
@@ -3365,13 +3365,13 @@ CHINESE_EMPIRE = {
     }
 }
 
+# These are admittedly pretty arbitrary
 LATER = {
     name = "Later {NAME}"
     tags = {
-        # These are admittedly pretty arbitrary
-        TNG
-        QIN
-        YUA
+        tag = TNG
+        tag = QIN
+        tag = YUA
     }
     conditions = {
         is_emperor_of_china = yes
@@ -3381,7 +3381,7 @@ LATER = {
 OIRAT_CONFEDERATION = {
     name = "Four Oirat Confederation"
     tags = {
-        OIR
+        tag = OIR
     }
     conditions = {
         has_reform = steppe_horde
@@ -3399,7 +3399,7 @@ OIRAT_CONFEDERATION = {
 NORTHERN_YUAN = {
     name = "Northern Yuan"
     tags = {
-        KHA
+        tag = KHA
     }
     conditions = {
         has_reform = steppe_horde
@@ -3422,7 +3422,7 @@ NORTHERN_YUAN = {
 CHAGATAI_HORDE = {
     name = "Chagatai Horde"
     tags = {
-        CHG
+        tag = CHG
     }
     conditions = {
         has_reform = steppe_horde
@@ -3436,7 +3436,7 @@ CHAGATAI_HORDE = {
 CHAGATAI_KHANATE = {
     name = "Chagatai Khanate"
     tags = {
-        CHG
+        tag = CHG
     }
     conditions = {
         has_reform = steppe_horde
@@ -3451,7 +3451,7 @@ CHAGATAI_KHANATE = {
 KAZAN_KHANATE = {
     name = "Khanate of {NAME}"
     tags = {
-        KAZ
+        tag = KAZ
     }
     conditions = {
         has_reform = steppe_horde
@@ -3465,7 +3465,7 @@ KAZAN_KHANATE = {
 WLS_PRINCIPALITY = {
     name = "Principality of {NAME}"
     tags = {
-        WLS
+        tag = WLS
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3478,7 +3478,7 @@ WLS_PRINCIPALITY = {
 AUSTRALIA_HUNGARY = {
     name = "Australia-Hungary"
     tags = {
-        AUH
+        tag = AUH
     }
     conditions = {
         has_country_flag = is_AUSTRALIA_HUNGARY_flag
@@ -3488,7 +3488,7 @@ AUSTRALIA_HUNGARY = {
 FRISIAN_FREEDOM = {
     name = "{NAME_ADJ} Freedom"
     tags = {
-        FRI
+        tag = FRI
     }
     conditions = {
         government = republic
@@ -3509,7 +3509,7 @@ PARLIAMENT_OF_HEAVEN = {
 SWISS_CONFEDERATION = {
     name = "Swiss Confederation"
     tags = {
-        SWI
+        tag = SWI
     }
     conditions = {
         government = republic
@@ -3522,7 +3522,7 @@ SWISS_CONFEDERATION = {
 KALMAR_UNION = {
     name = "Kalmar Union"
     tags = {
-        SCA
+        tag = SCA
     }
     conditions = {
         has_country_flag = is_KLU_flag
@@ -3532,7 +3532,7 @@ KALMAR_UNION = {
 NORTH_SEA_EMPIRE = {
     name = "North Sea Empire"
     tags = {
-        SCA
+        tag = SCA
     }
     conditions = {
         has_country_flag = renamed_to_north_sea_empire
@@ -3543,7 +3543,7 @@ NORTH_SEA_EMPIRE = {
 NOVGOROD_REPUBLIC = {
     name = "Lord Novgorod the Great"
     tags = {
-        NOV
+        tag = NOV
     }
     conditions = {
         government = republic
@@ -3556,7 +3556,7 @@ NOVGOROD_REPUBLIC = {
 NOVGOROD_GREAT_REPUBLIC = {
     name = "Sovereign Lord Novgorod the Greatest"
     tags = {
-        NOV
+        tag = NOV
     }
     conditions = {
         government = republic
@@ -3567,7 +3567,7 @@ NOVGOROD_GREAT_REPUBLIC = {
 THREE_LEAGUES = {
     name = "Three Leagues"
     tags = {
-        TTL
+        tag = TTL
     }
     conditions = {
         government = republic
@@ -3578,21 +3578,21 @@ THREE_LEAGUES = {
 BYZ_ROMAN_EMPIRE = {
     name = "Roman Empire"
     tags = {
-        BYZ
+        tag = BYZ
     }
 }
 
 ROM_ROMAN_EMPIRE = {
     name = "Roman Empire"
     tags = {
-        ROM
+        tag = ROM
     }
 }
 
 EASTERN_ROMAN_EMPIRE = {
     name = "Eastern Roman Empire"
     tags = {
-        BYZ
+        tag = BYZ
     }
     conditions = {
         exists = ROM
@@ -3602,7 +3602,7 @@ EASTERN_ROMAN_EMPIRE = {
 WESTERN_ROMAN_EMPIRE = {
     name = "Western Roman Empire"
     tags = {
-        ROM
+        tag = ROM
     }
     conditions = {
         exists = BYZ
@@ -3612,7 +3612,7 @@ WESTERN_ROMAN_EMPIRE = {
 BYZ_ROMAN_REPUBLIC = {
     name = "Roman Republic"
     tags = {
-        BYZ
+        tag = BYZ
     }
     conditions = {
         government = republic
@@ -3626,7 +3626,7 @@ BYZ_ROMAN_REPUBLIC = {
 ROM_ROMAN_REPUBLIC = {
     name = "Roman Republic"
     tags = {
-        ROM
+        tag = ROM
     }
     conditions = {
         government = republic
@@ -3640,7 +3640,7 @@ ROM_ROMAN_REPUBLIC = {
 EASTERN_ROMAN_REPUBLIC = {
     name = "Eastern Roman Republic"
     tags = {
-        BYZ
+        tag = BYZ
     }
     conditions = {
         government = republic
@@ -3652,7 +3652,7 @@ EASTERN_ROMAN_REPUBLIC = {
 WESTERN_ROMAN_REPUBLIC = {
     name = "Western Roman Republic"
     tags = {
-        ROM
+        tag = ROM
     }
     conditions = {
         government = republic
@@ -3664,7 +3664,7 @@ WESTERN_ROMAN_REPUBLIC = {
 EMPIRE_OF_TREBIZOND = {
     name = "Empire of Trebizond"
     tags = {
-        TRE
+        tag = TRE
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3675,7 +3675,7 @@ EMPIRE_OF_TREBIZOND = {
 REPUBLIC_OF_TREBIZOND = {
     name = "Republic of Trebizond"
     tags = {
-        TRE
+        tag = TRE
     }
     conditions = {
         government = republic
@@ -3686,7 +3686,7 @@ REPUBLIC_OF_TREBIZOND = {
 GOTHIC_EMPIRE = {
     name = "Gothic Empire"
     tags = {
-        FEO
+        tag = FEO
     }
     conditions = {
         has_country_flag = is_GOTHIA_flag
@@ -3697,7 +3697,7 @@ GOTHIC_EMPIRE = {
 LEAGUE_OF_LEZHE = {
     name = "League of Lezhë"
     tags = {
-        ALB
+        tag = ALB
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3709,7 +3709,7 @@ LEAGUE_OF_LEZHE = {
 RHODES_KNIGHTS = {
     name = "{NAME} of Rhodes"
     tags = {
-        KNI
+        tag = KNI
     }
     conditions = {
         OR = {
@@ -3729,7 +3729,7 @@ RHODES_KNIGHTS = {
 MALTA_KNIGHTS = {
     name = "{NAME} of Malta"
     tags = {
-        KNI
+        tag = KNI
     }
     conditions = {
         OR = {
@@ -3749,7 +3749,7 @@ MALTA_KNIGHTS = {
 JERUSALEM_KNIGHTS = {
     name = "{NAME} of Jerusalem"
     tags = {
-        KNI
+        tag = KNI
     }
     conditions = {
         OR = {
@@ -3769,7 +3769,7 @@ JERUSALEM_KNIGHTS = {
 SAUDI_ARABIA_KINGDOM = {
     name = "Kingdom of Saudi {NAME}"
     tags = {
-        ARB
+        tag = ARB
     }
     conditions = {
         OR = {
@@ -3788,7 +3788,7 @@ SAUDI_ARABIA_KINGDOM = {
 SAUDI_ARABIA_EMPIRE = {
     name = "Empire of Saudi {NAME}"
     tags = {
-        ARB
+        tag = ARB
     }
     conditions = {
         OR = {
@@ -3804,7 +3804,7 @@ SAUDI_ARABIA_EMPIRE = {
 HANSEATIC_LEAGUE = {
     name = "The Hanseatic League"
     tags = {
-        HSA
+        tag = HSA
     }
     conditions = {
         government = republic
@@ -3815,7 +3815,7 @@ HANSEATIC_LEAGUE = {
 EMPIRE_OF_THE_CROWN_OF_SAINT_STEFAN = {
     name = "Empire of the Crown of Saint Stefan"
     tags = {
-        HUN
+        tag = HUN
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3826,7 +3826,7 @@ EMPIRE_OF_THE_CROWN_OF_SAINT_STEFAN = {
 GREAT_ARMENIA_PRINCIPALITY = {
     name = "Principality of Great Armenia"
     tags = {
-        ARM
+        tag = ARM
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3840,7 +3840,7 @@ GREAT_ARMENIA_PRINCIPALITY = {
 GREAT_ARMENIA_KINGDOM = {
     name = "Kingdom of Great Armenia"
     tags = {
-        ARM
+        tag = ARM
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3855,7 +3855,7 @@ GREAT_ARMENIA_KINGDOM = {
 GREAT_ARMENIA_EMPIRE = {
     name = "Empire of Great Armenia"
     tags = {
-        ARM
+        tag = ARM
     }
     conditions = {
         has_reform = monarchy_mechanic
@@ -3867,7 +3867,7 @@ GREAT_ARMENIA_EMPIRE = {
 GREAT_ARMENIA_REPUBLIC = {
     name = "Great Armenian Republic"
     tags = {
-        ARM
+        tag = ARM
     }
     conditions = {
         government = republic
@@ -3878,7 +3878,7 @@ GREAT_ARMENIA_REPUBLIC = {
 GREAT_ARMENIA_THEOCRACY = {
     name = "Holy Great Armenian State"
     tags = {
-        ARM
+        tag = ARM
     }
     conditions = {
         government = theocracy
