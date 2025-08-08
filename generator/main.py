@@ -13,12 +13,10 @@ class ModBuilder:
         # Read rules, tag names, and dynasty names from input files
         self.rules_list = read_rules()
         print("Rules read successfully")
-        self.tag_name_list = read_tag_names()
+        self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
         print("Tag names read successfully")
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
-        self.revolutionary_names_list = read_revolutionary_names()
-        print("Revolutionary names read successfully")
 
         self.rules: dict[str, list[RuleEntry]] = defaultdict(list)
         self.tag_to_rules: dict[str, list[Rule]] = defaultdict(list)
@@ -31,19 +29,7 @@ class ModBuilder:
         }
 
     def assign_rules_to_tags(self):
-        for tag, localisation in self.revolutionary_names_list.items():
-            rule = Rule(
-                name=localisation.name,
-                name_adj=localisation.adj,
-                id=f"REV_{tag}",
-                tags=[tag],
-                conditions=[
-                    "government = republic",
-                    "is_revolutionary_republic_trigger = yes",
-                ],
-            )
-            self.rules_list.append(rule)
-
+        self.rules_list.extend(add_revolutionaries())
         self.rules_list.extend(add_feudatories())
         self.rules_list.extend(add_protectorates())
         self.rules_list.extend(add_jap_puppets())

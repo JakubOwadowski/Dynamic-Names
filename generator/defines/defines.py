@@ -2,6 +2,13 @@ RULES_PATH = "rules/rules.txt"
 DYNASTIES_PATH = "data/dynasties.txt"
 TAG_NAMES_PATH = "data/tag_names.txt"
 REVOLUTIONARIES_PATH = "data/revolutionary_names.txt"
+KOREAN_DYNASTIES_PATH = "data/korean_dynasties.txt"
+JAPANESE_PUPPETS_PATH = "data/japanese_puppets.txt"
+FEUDATORIES_PATH = "data/feudatories.txt"
+PROTECTORATES_PATH = "data/protectorates.txt"
+EYALETS_PATH = "data/eyalets.txt"
+EMPIRE_OF_CHINA_NAMES = "data/empire_of_china_names.txt"
+
 EVENT_NAME = "dynamic_names"
 
 EVENT_SCRIPT_HEADER = """\
