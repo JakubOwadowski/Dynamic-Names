@@ -139,7 +139,7 @@ def add_subject_rules(file_path, id_prefix, overlord_condition):
                 id=f"{id_prefix}_{key.upper()}",
                 conditions=[
                     "OR = { is_subject_of_type = vassal is_subject_of_type = march }",
-                    f"overlord = { {overlord_condition} }",
+                    f"overlord = {{ {overlord_condition} }}"
                     f"capital_scope = {{ {get_scope(key)} = {key} }}",
                 ],
             )
@@ -170,7 +170,7 @@ def add_jap_puppets():
     return add_subject_rules(
         file_path="data/japanese_puppets.txt",
         id_prefix="JAP_PUPPET",
-        overlord_condition="culture_group = japanese_g",
+        overlord_condition="tag = JAP",
     )
 
 

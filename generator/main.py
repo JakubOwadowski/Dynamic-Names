@@ -29,41 +29,47 @@ class ModBuilder:
         }
 
     def assign_rules_to_tags(self):
-        self.rules_list.extend(add_revolutionaries())
-        self.rules_list.extend(add_feudatories())
-        self.rules_list.extend(add_protectorates())
-        self.rules_list.extend(add_jap_puppets())
-        self.rules_list.extend(add_emperor_of_china())
-        self.rules_list.extend(add_korean_dynasties())
-        self.rules_list.extend(add_eyalets())
+        # Collect all rules from various sources
+        rule_adders = [
+            add_revolutionaries,
+            add_feudatories,
+            add_protectorates,
+            add_jap_puppets,
+            add_emperor_of_china,
+            add_korean_dynasties,
+            add_eyalets,
+        ]
 
+        for add_rules in rule_adders:
+            self.rules_list.extend(add_rules())
+
+        # Map rules to applicable tags
         for rule in self.rules_list:
-            if not rule.tags:
-                for tag, _ in self.tag_name_list.items():
-                    self.tag_to_rules[tag].append(rule)
-            else:
-                for tag in rule.tags:
-                    self.tag_to_rules[tag].append(rule)
+            target_tags = rule.tags or self.tag_name_list.keys()
+            for tag in target_tags:
+                self.tag_to_rules[tag].append(rule)
 
+        # Build final rule entries per tag
         for tag, loc in self.tag_name_list.items():
             for rule in self.tag_to_rules[tag]:
-                name = get_country_name(rule.name, (tag, self.tag_name_list[tag]))
-                if name:
-                    tag_name_value = get_tag_name(tag, rule.id)
-                    if tag_name_value == "TEO_ELECTORATE":
-                        tag_name_value = "TEO_ELECTORATE_NAME"
+                name = get_country_name(rule.name, (tag, loc))
+                if not name:
+                    continue
 
-                    # Pick adjective: rule-specific if set, otherwise default
-                    name_adj = rule.name_adj if rule.name_adj else loc.adj
+                tag_name_value = get_tag_name(tag, rule.id)
+                if tag_name_value == "TEO_ELECTORATE":
+                    tag_name_value = "TEO_ELECTORATE_NAME"
 
-                    self.rules[tag].append(
-                        RuleEntry(
-                            tag=tag_name_value,
-                            name=name,
-                            name_adj=name_adj,
-                            condition=" ".join(rule.conditions),
-                        )
+                name_adj = rule.name_adj or loc.adj
+
+                self.rules[tag].append(
+                    RuleEntry(
+                        tag=tag_name_value,
+                        name=name,
+                        name_adj=name_adj,
+                        condition=" ".join(rule.conditions),
                     )
+                )
 
     def generate_event_script(self):
         dynasty_rules = [
