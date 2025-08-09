@@ -15,6 +15,10 @@ def get_tag_name(tag: str, tag_name: str) -> str:
     return tag + "_" + tag_name
 
 
+def format_as_tag(str: str):
+    return str.upper().replace(" ", "_").replace("-", "_").replace("'", "")
+
+
 def split_stripped(s: str, sep: str = ",", maxsplit: int = -1) -> list[str]:
     return [part.strip() for part in s.split(sep, maxsplit)]
 
@@ -190,7 +194,7 @@ def add_emperor_of_china():
     return [
         Rule(
             name=name,
-            id=f"GREAT_{culture.upper()}",
+            id=f"GREAT_{format_as_tag(culture)}",
             conditions=[
                 "is_emperor_of_china = yes",
                 f"primary_culture = {culture}",
@@ -207,7 +211,7 @@ def add_shogunates():
     return [
         Rule(
             name=f"{name} Shogunate",
-            id=f"{name.upper()}_SHOGUNATE",
+            id=f"{format_as_tag(name)}_SHOGUNATE",
             tags=tags.split(","),
             conditions=[
                 "has_reform = shogunate",
@@ -222,13 +226,13 @@ def add_shogunates():
 
 
 # Changes the name of Korea based on the current ruling clan
-def add_korean_dynasties(rules_list: list[Rule]):
+def add_dynastic_names(rules_list: list[Rule]):
     rules = []
     for rule in rules_list:
         if rule.tags:
             continue
-        for line in read_lines(KOREAN_DYNASTIES_PATH):
-            dynasty, name, name_adj = split_stripped(line)
+        for line in read_lines(DYNASTIC_NAMES_PATH):
+            tag, dynasty, name, name_adj = split_stripped(line)
             if "{NAME}" in rule.name:
                 name_formatted = rule.name.format(NAME=name)
             elif "{NAME_ADJ}" in rule.name:
@@ -240,8 +244,8 @@ def add_korean_dynasties(rules_list: list[Rule]):
             new_rule = Rule(
                 name=name_formatted,
                 name_adj=name_adj,
-                id=f"{name.upper()}_{rule.id}",
-                tags=["KOR"],
+                id=f"{format_as_tag(name)}_{rule.id}",
+                tags=[tag],
                 conditions=rule.conditions + [f'dynasty = "{dynasty}"'],
             )
             rules.append(new_rule)

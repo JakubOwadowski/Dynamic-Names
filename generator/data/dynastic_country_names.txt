@@ -1,0 +1,15 @@
+# Ruling Family Name,Dynasty Name,Dynasty Name Adjective
+
+# Korean countries
+# Korea is default
+KOR,Go,Goguryeo,Goguryeoan
+KOR,Park,Silla,Sillan
+KOR,Kim,Silla,Sillan
+KOR,Dae,Balhae,Balhaean
+KOR,Wang,Goryeo,Goryeoan
+KOR,Yi,Joseon,Joseonese
+
+# Vietnamese countries
+# Dai Viet is default, so not included
+DAI,Nguyen,Dai Nam,Vietnamese
+DAI,Nguyen Phuc,Dai Nam,Vietnamese

@@ -24,10 +24,7 @@ class ModBuilder:
         self.events = {}
         self.event_id = 1
 
-        self.dynasty_keys = {
-            name: name.upper().replace(" ", "_").replace("-", "_").replace("'", "")
-            for name in self.dynasty_names
-        }
+        self.dynasty_keys = {name: format_as_tag(name) for name in self.dynasty_names}
 
     def assign_rules(self):
         for module in [
@@ -36,9 +33,9 @@ class ModBuilder:
             add_protectorates(),
             add_jap_puppets(),
             add_emperor_of_china(),
-            add_korean_dynasties(self.rules_list),
             add_shogunates(),
             add_eyalets(),
+            add_dynastic_names(self.rules_list),
         ]:
             self.rules_list.extend(module)
 
