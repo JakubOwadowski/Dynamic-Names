@@ -1800,6 +1800,7 @@ SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         NOT = {
             government_rank = 2
         }
@@ -1823,6 +1824,7 @@ DYNASTY_SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         NOT = {
             government_rank = 2
         }
@@ -1846,6 +1848,7 @@ GREAT_SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         government_rank = 2
         NOT = {
             government_rank = 3
@@ -1870,6 +1873,7 @@ DYNASTY_GREAT_SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         government_rank = 2
         NOT = {
             government_rank = 3
@@ -1894,6 +1898,7 @@ GRAND_SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         government_rank = 3
     }
 }
@@ -1907,6 +1912,7 @@ DYNASTY_GRAND_SHARIFATE = {
             tag = MFL
             has_reform = sharifate_reform
         }
+        religion_group = muslim
         government_rank = 3
         NOT = {
             OR = {
