@@ -18,6 +18,7 @@ class ModBuilder:
         self.dynasty_names = read_dynasties()
         print("Dynasty names read successfully")
 
+        self.global_rules_list: list[Rule] = []
         self.rules: dict[str, list[RuleEntry]] = defaultdict(list)
         self.tag_to_rules: dict[str, list[Rule]] = defaultdict(list)
         self.events = {}
@@ -28,9 +29,8 @@ class ModBuilder:
             for name in self.dynasty_names
         }
 
-    def assign_rules_to_tags(self):
-        # Collect all rules from various sources
-        rule_adders = [
+    def assign_rules(self):
+        modules = [
             add_revolutionaries,
             add_feudatories,
             add_protectorates,
@@ -40,8 +40,12 @@ class ModBuilder:
             add_eyalets,
         ]
 
-        for add_rules in rule_adders:
-            self.rules_list.extend(add_rules())
+        for module in modules:
+            for rule in module():
+                if rule.tags:
+                    self.rules_list.append(rule)
+                else:
+                    self.global_rules_list.append(rule)
 
         # Map rules to applicable tags
         for rule in self.rules_list:
@@ -72,11 +76,6 @@ class ModBuilder:
                 )
 
     def generate_event_script(self):
-        dynasty_rules = [
-            (rule.name, " ".join(rule.conditions), rule.id)
-            for rule in self.rules_list
-            if "{DYNASTY}" in rule.name
-        ]
 
         # Compose event triggers for the initial event immediate block
         event_triggers = []
@@ -87,11 +86,22 @@ class ModBuilder:
             self.events[tag] = str(self.event_id)
             self.event_id += 1
 
+        dynasty_rules = [rule for rule in self.rules_list if "{DYNASTY}" in rule.name]
         for rule in dynasty_rules:
+            conditions = " ".join(rule.conditions)
             event_triggers.append(
-                f"        if = {{ limit = {{ {rule[1]} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+                f"        if = {{ limit = {{ {conditions} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
-            self.events[rule[0]] = str(self.event_id)
+            self.events[rule.name] = str(self.event_id)
+            self.event_id += 1
+
+        # Add global rules directly
+        for rule in self.global_rules_list:
+            conditions = " ".join(rule.conditions)
+            event_triggers.append(
+                f"        if = {{ limit = {{ {conditions} }} override_country_name = {rule.id} }}"
+            )
+            self.events[rule.name] = str(self.event_id)
             self.event_id += 1
 
         # Write event header with triggers
@@ -110,7 +120,7 @@ class ModBuilder:
                     f"        if = {{ limit = {{ {rule.condition} }} override_country_name = {rule.tag} }}"
                 )
             event_lines.append(
-                COUNTRY_EVENT_TEMPLATE.format(
+                TAG_DEPENDANT_EVENT_TEMPLATE.format(
                     event_name=EVENT_NAME,
                     id=id,
                     tag=tag,
@@ -120,15 +130,15 @@ class ModBuilder:
 
         # Dynasty rules events
         for rule in dynasty_rules:
-            id = self.events[rule[0]]
+            id = self.events[rule.name]
             conditions = []
             for name in self.dynasty_names:
                 key = self.dynasty_keys[name]
                 conditions.append(
-                    f'        if = {{ limit = {{ dynasty = "{name}" }} override_country_name = {key}_{rule[2]} }}'
+                    f'        if = {{ limit = {{ dynasty = "{name}" }} override_country_name = {key}_{rule.id} }}'
                 )
             event_lines.append(
-                DYNASTY_EVENT_TEMPLATE.format(
+                TAG_AGNOSTIC_EVENT_TEMPLATE.format(
                     event_name=EVENT_NAME, id=id, conditions="\n".join(conditions)
                 )
             )
@@ -145,7 +155,8 @@ class ModBuilder:
             loc_lines.append(f" # {tag}")
             for entry in entries:
                 loc_lines.append(f' {entry.tag}: "{entry.name}"')
-                loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
+                if entry.name_adj:
+                    loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
@@ -157,6 +168,13 @@ class ModBuilder:
                         f' {key}_{rule.id}: "{rule.name.replace("{DYNASTY}", name.title())}"'
                     )
                     loc_lines.append(f' {key}_{rule.id}_ADJ: "{name.title()}"')
+
+        loc_lines.append(" #global rules")
+        for rule in self.global_rules_list:
+            loc_lines.append(f"\n # {rule.id}")
+            loc_lines.append(f' {rule.id}: "{rule.name}"')
+            if entry.name_adj:
+                loc_lines.append(f' {rule.id}_ADJ: "{rule.name_adj}"')
 
         loc_lines.append('update_dynamic_names_decision_title: "Update Dynamic Names"')
         loc_lines.append(
@@ -204,7 +222,7 @@ class ModBuilder:
         print("Writing decision done")
 
     def build(self):
-        self.assign_rules_to_tags()
+        self.assign_rules()
         self.generate_event_script()
         self.generate_localisation()
         self.generate_on_actions()

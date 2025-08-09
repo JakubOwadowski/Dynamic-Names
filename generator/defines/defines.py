@@ -34,7 +34,7 @@ country_event = {{
 }}
 """
 
-COUNTRY_EVENT_TEMPLATE = """\
+TAG_DEPENDANT_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
     title = {event_name}.{id}.title
@@ -57,7 +57,7 @@ country_event = {{
 }}
 """
 
-DYNASTY_EVENT_TEMPLATE = """\
+TAG_AGNOSTIC_EVENT_TEMPLATE = """\
 country_event = {{
     id = {event_name}.{id}
     title = {event_name}.{id}.title
