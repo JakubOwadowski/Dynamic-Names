@@ -30,28 +30,26 @@ class ModBuilder:
         }
 
     def assign_rules(self):
-        modules = [
-            add_revolutionaries,
-            add_feudatories,
-            add_protectorates,
-            add_jap_puppets,
-            add_emperor_of_china,
-            add_korean_dynasties,
-            add_eyalets,
-        ]
-
-        for module in modules:
-            for rule in module():
-                if rule.tags:
-                    self.rules_list.append(rule)
-                else:
-                    self.global_rules_list.append(rule)
+        for module in [
+            add_revolutionaries(),
+            add_feudatories(),
+            add_protectorates(),
+            add_jap_puppets(),
+            add_emperor_of_china(),
+            add_korean_dynasties(self.rules_list),
+            add_shogunates(),
+            add_eyalets(),
+        ]:
+            self.rules_list.extend(module)
 
         # Map rules to applicable tags
         for rule in self.rules_list:
-            target_tags = rule.tags or self.tag_name_list.keys()
-            for tag in target_tags:
-                self.tag_to_rules[tag].append(rule)
+            if not any(x in rule.name for x in FORMAT_TEMPLATES) and not rule.tags:
+                self.global_rules_list.append(rule)
+            else:
+                target_tags = rule.tags or self.tag_name_list.keys()
+                for tag in target_tags:
+                    self.tag_to_rules[tag].append(rule)
 
         # Build final rule entries per tag
         for tag, loc in self.tag_name_list.items():

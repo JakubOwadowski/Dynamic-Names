@@ -197,61 +197,54 @@ def add_emperor_of_china():
             ],
         )
         for culture, name in (
-            split_stripped(line)
-            for line in read_lines("data/empire_of_china_names.txt")
+            split_stripped(line) for line in read_lines(EMPIRE_OF_CHINA_NAMES)
+        )
+    ]
+
+
+# Shogunate names based on capital and tag
+def add_shogunates():
+    return [
+        Rule(
+            name=f"{name} Shogunate",
+            id=f"{name.upper()}_SHOGUNATE",
+            tags=tags.split(","),
+            conditions=[
+                "has_reform = shogunate",
+                # Shogun cannot move their capital :(
+                # f"{capital} = {{ is_capital = yes }}",
+            ],
+        )
+        for capital, name, tags in (
+            split_stripped(line, maxsplit=2) for line in read_lines(SHOGUNATE_NAMES)
         )
     ]
 
 
 # Changes the name of Korea based on the current ruling clan
-def add_korean_dynasties():
+def add_korean_dynasties(rules_list: list[Rule]):
     rules = []
-    rule_templates = [
-        (
-            "Kingdom of {name}",
-            "{id}_K",
-            [
-                "has_reform = monarchy_mechanic",
-                "government_rank = 2",
-                "NOT = { government_rank = 3 }",
-            ],
-        ),
-        (
-            "Empire of {name}",
-            "{id}_E",
-            [
-                "has_reform = monarchy_mechanic",
-                "government_rank = 3",
-            ],
-        ),
-        (
-            "Republic of {name}",
-            "{id}_R",
-            [
-                "government = republic",
-            ],
-        ),
-        (
-            "Great {name}",
-            "{id}_EOC",
-            [
-                "is_emperor_of_china = yes",
-                "primary_culture = korean",
-            ],
-        ),
-    ]
-
-    for line in read_lines(KOREAN_DYNASTIES_PATH):
-        dynasty, name, name_adj = split_stripped(line)
-        for title, id_template, extra_conditions in rule_templates:
-            rule = Rule(
-                name=title.format(name=name),
+    for rule in rules_list:
+        if rule.tags:
+            continue
+        for line in read_lines(KOREAN_DYNASTIES_PATH):
+            dynasty, name, name_adj = split_stripped(line)
+            if "{NAME}" in rule.name:
+                name_formatted = rule.name.format(NAME=name)
+            elif "{NAME_ADJ}" in rule.name:
+                name_formatted = rule.name.format(NAME_ADJ=name_adj)
+            elif "{DYNASTY}" in rule.name:
+                name_formatted = rule.name.format(DYNASTY=dynasty)
+            else:
+                continue
+            new_rule = Rule(
+                name=name_formatted,
                 name_adj=name_adj,
-                id=id_template.format(id=name.upper()),
+                id=f"{name.upper()}_{rule.id}",
                 tags=["KOR"],
-                conditions=extra_conditions + [f'dynasty = "{dynasty}"'],
+                conditions=rule.conditions + [f'dynasty = "{dynasty}"'],
             )
-            rules.append(rule)
+            rules.append(new_rule)
     return rules
 
 

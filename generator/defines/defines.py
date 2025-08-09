@@ -8,6 +8,7 @@ FEUDATORIES_PATH = "data/feudatories.txt"
 PROTECTORATES_PATH = "data/protectorates.txt"
 EYALETS_PATH = "data/eyalets.txt"
 EMPIRE_OF_CHINA_NAMES = "data/empire_of_china_names.txt"
+SHOGUNATE_NAMES = "data/shogunate_names.txt"
 
 EVENT_NAME = "dynamic_names"
 
@@ -86,3 +87,5 @@ country_decisions = {{
     }}
 }}
 """
+
+FORMAT_TEMPLATES = ["{NAME}", "{NAME_ADJ}", "{DYNASTY}"]

@@ -1,0 +1,5 @@
+# Capital, Name, Tags
+4189,Kamakura,HJO,TKD,SMZ
+1028,Edo,TKG
+1020,Muromachi,ASK,IMG
+1030,Azuchi,ODA
