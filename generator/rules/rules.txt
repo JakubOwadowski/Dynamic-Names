@@ -25,21 +25,6 @@ EMPIRE = {
         has_reform = monarchy_mechanic
         government_rank = 3
         is_emperor = no
-        NOT = {
-            OR = {
-                culture_group = east_asian
-                culture_group = japanese_g
-                culture_group = tibetan_group
-                culture_group = thai_group
-                culture_group = southeastasian_group
-                culture_group = burman
-                culture_group = malay
-                culture_group = hindusthani
-                culture_group = dravidian
-                culture_group = central_indic
-                culture_group = eastern_aryan
-            }
-        }
     }
 }
 
@@ -52,6 +37,7 @@ EMPIRE_ASIAN = {
         OR = {
             culture_group = east_asian
             culture_group = japanese_g
+            culture_group = korean_g
             culture_group = tibetan_group
             culture_group = thai_group
             culture_group = southeastasian_group
@@ -327,6 +313,7 @@ TRIBE = {
                         culture_group = altaic
                         culture_group = tartar
                         primary_culture = altaic_new
+                        primary_culture = manchu_new
                     }
                 }
             }
@@ -381,7 +368,7 @@ KHANATE = {
 }
 
 KHAGANATE = {
-    name = "Khaganate of {NAME}"
+    name = "{NAME_ADJ} Khaganate"
     conditions = {
         has_reform = steppe_horde
         OR = {
@@ -390,6 +377,92 @@ KHAGANATE = {
             primary_culture = altaic_new
         }
         government_rank = 3
+    }
+}
+
+JURCHENS = {
+    name = "{NAME} Jurchens"
+    conditions = {
+        has_reform = steppe_horde
+        primary_culture = manchu
+    }
+}
+
+MANCHUS = {
+    name = "{NAME} Manchus"
+    conditions = {
+        has_reform = steppe_horde
+        primary_culture = manchu_new
+    }
+}
+
+MANCHU_KHANATE = {
+    name = "Manchu Khanate"
+    tags = {
+        tag = MCH
+    }
+    conditions = {
+        has_reform = steppe_horde
+        primary_culture = manchu_new
+        government_rank = 2
+        NOT = {
+            government_rank = 3
+        }
+    }
+}
+
+MANCHU_KHAGANATE = {
+    name = "Manchu Khaganate"
+    tags = {
+        tag = MCH
+    }
+    conditions = {
+        has_reform = steppe_horde
+        primary_culture = manchu_new
+        government_rank = 3
+    }
+}
+
+THE_MANCHUS = {
+    name = "The Manchus"
+    tags = {
+        tag = MCH
+    }
+    conditions = {
+        has_reform = steppe_horde
+        primary_culture = manchu_new
+        is_subject = yes
+    }
+}
+
+MONGOLS = {
+    name = "{NAME} Mongols"
+    conditions = {
+        has_reform = steppe_horde
+        OR = {
+            primary_culture = mongol
+            primary_culture = chahar
+            primary_culture = khalkha
+            primary_culture = oirats
+        }
+        is_subject = yes
+    }
+}
+
+THE_MONGOLS = {
+    name = "The Mongols"
+    tags = {
+        tag = KHA
+    }
+    conditions = {
+        has_reform = steppe_horde
+        OR = {
+            primary_culture = mongol
+            primary_culture = chahar
+            primary_culture = khalkha
+            primary_culture = oirats
+        }
+        is_subject = yes
     }
 }
 
@@ -1256,14 +1329,6 @@ PRINCIPALITY_EASTERN = {
             primary_culture = goths
             primary_culture = gothic_ger
         }
-    }
-}
-
-KHANATE_JURCHEN = {
-    name = "{NAME_ADJ} Khanate"
-    conditions = {
-        has_reform = steppe_horde
-        primary_culture = manchu
     }
 }
 
@@ -3399,6 +3464,7 @@ OIRAT_CONFEDERATION = {
         NOT = {
             government_rank = 3
         }
+        is_subject = no
     }
 }
 
