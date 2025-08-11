@@ -1,9 +1,8 @@
 country_decisions = {
-	update_dynamic_names_decision = {
-		potential = { always = yes }
-		allow = { always = yes }
-		ai_will_do = { factor = 0 }
-		effect = {
-			country_event  = { id = dynamic_names.0  }
-		}
-	}}
+    update_dynamic_names_decision = {
+        potential = { always = yes }
+        allow = { always = yes }
+        ai_will_do = { factor = 0 }
+        effect = { country_event = { id = dynamic_names.0 } }
+    }
+}

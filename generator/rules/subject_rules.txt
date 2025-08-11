@@ -1,0 +1,5 @@
+#Used for subjects in region - for example for Chinese feudatories and protectorates being named after certain regions (ex. Hunan Feudatory)
+# Path to names of tags in data, prefix, ex. PUPPET, condition for overlord
+"data/feudatories.txt","FEUDATORY","is_emperor_of_china = yes"
+"data/protectorates.txt","PROTECTORATE","is_emperor_of_china = yes"
+"data/japanese_puppets.txt","JAPANESE_PUPPET","tag = JAP"

@@ -165,3 +165,6 @@ Bahmanid
 al-Mutahhar
 Tahirid
 Rassid
+Ayyubid
+Sassanid
+Umayyad

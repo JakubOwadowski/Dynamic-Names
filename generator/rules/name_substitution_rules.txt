@@ -1,0 +1,1701 @@
+﻿INDIA = {
+    name = "India"
+	name_adj = "Indian"
+    tags = {
+        tag = BHA
+        tag = HIN
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+BANGLADESH = {
+    name = "Bangladesh"
+	name_adj = "Bangladeshi"
+    tags = {
+        tag = BNG
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+CAMBODIA = {
+    name = "Cambodia"
+	name_adj = "Cambodian"
+    tags = {
+        tag = KHM
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+LAOS = {
+    name = "Laos"
+	name_adj = "Laotian"
+    tags = {
+        tag = LXA
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+THAILAND = {
+    name = "Thailand"
+	name_adj = "Thai"
+    tags = {
+        tag = SUK
+        tag = AYU
+        tag = SIA
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+BURMA = {
+    name = "Burma"
+	name_adj = "Burmese"
+    tags = {
+        tag = AVA
+        tag = HSE
+        tag = TAU
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+CHINA = {
+    name = "China"
+	name_adj = "Chinese"
+    tags = {}
+    conditions = {
+        culture_group = chinese
+        government = republic
+        is_revolutionary_republic_trigger = yes
+        num_of_provinces_owned_or_owned_by_subjects_with = {
+            value = 75
+            OR = {
+                region = north_china_region
+                region = south_china_region
+                region = xinan_region
+            }
+        }
+    }
+}
+
+BELGIUM = {
+    name = "Belgium"
+	name_adj = "Belgian"
+    tags = {}
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+        capital_scope = {
+            OR = {
+                area = brabant_area
+                area = flanders_area
+                area = wallonia_area
+            }
+            NOT = {
+                province_id = 94
+            }
+        }
+    }
+}
+
+LIGURIA = {
+    name = "Liguria"
+	name_adj = "Ligurian"
+    tags = {
+        tag = GEN
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+
+CISAPLIA = {
+    name = "Cisalpia"
+	name_adj = "Cisalpine"
+    tags = {
+        tag = MLO
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+PARTHENOPEA = {
+    name = "Parthenopea"
+	name_adj = "Parthenopean"
+    tags = {
+        tag = NAP
+        tag = TTS
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+PIEDMONT = {
+    name = "Piedmont"
+	name_adj = "Piedmontese"
+    tags = {
+        tag = SAV
+        tag = SPI
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+HELVETIA = {
+    name = "Helvetia"
+	name_adj = "Helvetic"
+    tags = {
+        tag = SWI
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+ETRURIA = {
+    name = "Etruria"
+	name_adj = "Etrurian"
+    tags = {
+        tag = LAN
+        tag = TUS
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+ANCONIA = {
+    name = "Anconia"
+	name_adj = "Anconine"
+    tags = {
+        tag = URB
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+SAN_MARCO = {
+    name = "San Marco"
+	name_adj = "Sanmarconese"
+    tags = {
+        tag = VEN
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+CZECHIA = {
+    name = "Czechia"
+	name_adj = "Czech"
+    tags = {
+        tag = BOH
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+SLOVENIA = {
+    name = "Slovenia"
+	name_adj = "Slovene"
+    tags = {
+        tag = CLI
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+ILLYRIA = {
+    name = "Illyria"
+	name_adj = "Illyrian"
+    tags = {
+        tag = CRO
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+UKRAINE = {
+    name = "Ukraine"
+	name_adj = "Ukrainian"
+    tags = {
+        tag = UKR
+        tag = KIE
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+LATVIA = {
+    name = "Latvia"
+	name_adj = "Latvian"
+    tags = {
+        tag = LVA
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+DACIA = {
+    name = "Dacia"
+	name_adj = "Dacian"
+    tags = {
+        tag = RMN
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+SLOVAKIA = {
+    name = "Slovakia"
+	name_adj = "Slovak"
+    tags = {
+        tag = SLO
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+IRAN = {
+    name = "Iran"
+	name_adj = "Irani"
+    tags = {
+        tag = PER
+        tag = ERS
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+GURKANI = {
+    name = "Gurkani"
+	name_adj = "Gurkani"
+    tags = {
+        tag = TIM
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+HELLADA = {
+    name = "Hellada"
+	name_adj = "Hellene"
+    tags = {
+        tag = GRE
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+LPC = {
+    name = "Lithuania-Poland"
+	name_adj = "Commonwealth"
+    tags = {
+        tag = PLC
+    }
+    conditions = {
+        primary_culture = lithuanian
+    }
+}
+
+CHAGATAI = {
+    name = "Chagatai"
+	name_adj = "Chagatai"
+    tags = {
+        tag = CHG
+    }
+    conditions = {
+        has_country_flag = is_CHAGATAI_flag
+    }
+}
+
+AUSTRALIA_HUNGARY = {
+    name = "Australia-Hungary"
+	name_adj = "Australohungarian"
+    tags = {
+        tag = AUH
+    }
+    conditions = {
+        has_country_flag = is_AUSTRALIA_HUNGARY_flag
+    }
+}
+
+GOTHIA = {
+    name = "Gothia"
+	name_adj = "Gothic"
+    tags = {
+        tag = FEO
+    }
+   conditions = {
+        has_country_flag = is_GOTHIA_flag
+    }
+}
+
+GREAT_ARMENIA = {
+    name = "Great Armenia"
+	name_adj = "Great Armenian"
+    tags = {
+        tag = ARM
+    }
+   conditions = {
+        has_country_flag = is_GREAT_ARMENIA_flag
+    }
+}
+
+OTTOMANS = {
+    name = "Ottomans"
+	name_adj = "Ottoman"
+    tags = {
+        tag = TUR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Osmanoglu"
+    }
+}
+
+JOSEON = {
+    name = "Joseon"
+	name_adj = "Joseon"
+    tags = {
+        tag = KOR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Yi"
+    }
+}
+
+GOGURYEO = {
+    name = "Goguryeo"
+	name_adj = "Goguryeo"
+    tags = {
+        tag = KOR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Go"
+    }
+}
+
+SILLA = {
+    name = "Silla"
+	name_adj = "Sillan"
+    tags = {
+        tag = KOR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        OR = {
+            dynasty = "Park"
+            dynasty = "Kim"
+        }
+    }
+}
+
+BALHAE = {
+    name = "Balhae"
+	name_adj = "Balhaean"
+    tags = {
+        tag = KOR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Dae"
+    }
+}
+
+GORYEO = {
+    name = "Goryeo"
+	name_adj = "Goryeo"
+    tags = {
+        tag = KOR
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        dynasty = "Wang"
+    }
+}
+
+DAI_NAM = {
+    name = "Dai Nam"
+	name_adj = "Dainamese"
+    tags = {
+        tag = DAI
+    }
+   conditions = {
+        has_reform = monarchy_mechanic
+        OR = {
+            dynasty = "Nguyen"
+            dynasty = "Nguyen Phuc"
+        }
+    }
+}
+
+VIET_NAM = {
+    name = "Viet Nam"
+	name_adj = "Vietnamese"
+    tags = {
+        tag = DAI
+    }
+    conditions = {
+        government = republic
+    }
+}
+
+NIHON = {
+    name = "Nihon"
+	name_adj = "Nihon"
+    tags = {
+        tag = JAP
+    }
+    conditions = {
+        is_emperor_of_china = yes
+    }
+}
+
+BOD = {
+    name = "Bod"
+	name_adj = "Bod"
+    tags = {
+        tag = TIB
+    }
+    conditions = {
+        NOT = { culture = tibetan_new }
+        is_emperor_of_china = yes
+    }
+}
+
+VIET = {
+    name = "Viet"
+	name_adj = "Viet"
+    tags = {
+        tag = DAI
+    }
+    conditions = {
+        NOT = { culture = vietnamese_new }
+        is_emperor_of_china = yes
+    }
+}
+
+ZHONGHAN = {
+    name = "Zhonghan"
+	name_adj = "Zhonghan"
+    tags = {
+        tag = KOR
+    }
+    conditions = {
+        culture = korean_new
+        is_emperor_of_china = yes
+    }
+}
+
+ZHUANG = {
+    name = "Zhuang"
+	name_adj = "Zhuang"
+    tags = {
+        tag = TIB
+    }
+    conditions = {
+        culture = tibetan_new
+        is_emperor_of_china = yes
+    }
+}
+
+YUE_VIETNAM = {
+    name = "Yue"
+	name_adj = "Yue"
+    tags = {
+        tag = DAI
+    }
+    conditions = {
+        culture = vietnamese_new
+        is_emperor_of_china = yes
+    }
+}
+
+HEBEI = {
+    name = "Hebei"
+	name_adj = "Hebei"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = hebei_area
+                area = south_hebei_area
+            }
+        }
+    }
+}
+
+SHANDONG = {
+    name = "Shandong"
+	name_adj = "Shandong"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = shandong_area
+        }
+    }
+}
+
+JIANGSU = {
+    name = "Jiangsu"
+	name_adj = "Jiangsu"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = jiangsu_area
+                area = south_jiangsu_area
+            }
+        }
+    }
+}
+
+ANHUI = {
+    name = "Anhui"
+	name_adj = "Anhui"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = anhui_area
+                area = south_anhui_area
+            }
+        }
+    }
+}
+
+ZHEJIANG = {
+    name = "Zhejiang"
+	name_adj = "Zhejiang"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = zhejiang_area
+        }
+    }
+}
+
+JIANGXI = {
+    name = "Jiangxi"
+	name_adj = "Jiangxi"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = jiangxi_area
+        }
+    }
+}
+
+FUJIAN = {
+    name = "Fujian"
+	name_adj = "Fujian"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = fujian_area
+        }
+    }
+}
+
+TAIWAN = {
+    name = "Taiwan"
+	name_adj = "Taiwan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = taiwan_area
+        }
+    }
+}
+
+GUANGDONG = {
+    name = "Guangdong"
+	name_adj = "Guangdong"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = guangdong_area
+                area = west_guangdong_area
+            }
+        }
+    }
+}
+
+YUNNAN = {
+    name = "Yunnan"
+	name_adj = "Yunnan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = yun_gui_area
+                area = yun_gui_borderland_area
+            }
+        }
+    }
+}
+
+SICHUAN = {
+    name = "Sichuan"
+	name_adj = "Sichuan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = sichuan_area
+        }
+    }
+}
+
+CHUANNAN = {
+    name = "Chuannan"
+	name_adj = "Chuannan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = chuannan_area
+        }
+    }
+}
+
+CHUANBEI = {
+    name = "Chuanbei"
+	name_adj = "Chuanbei"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = chuanbei_area
+        }
+    }
+}
+
+HUBEI = {
+    name = "Hubei"
+	name_adj = "Hubei"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = huguang_area
+        }
+    }
+}
+
+HUNAN = {
+    name = "Hunan"
+	name_adj = "Hunan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = hunan_area
+        }
+    }
+}
+
+HENAN = {
+    name = "Henan"
+	name_adj = "Henan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = henan_area
+                area = north_henan_area
+            }
+        }
+    }
+}
+
+SHAANXI = {
+    name = "Shaanxi"
+	name_adj = "Shaanxi"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = shaanxi_area
+        }
+    }
+}
+
+SHANXI = {
+    name = "Shanxi"
+	name_adj = "Shanxi"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            area = shanxi_area
+        }
+    }
+}
+
+GANSU = {
+    name = "Gansu"
+	name_adj = "Gansu"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                area = gansu_area
+                area = west_gansu_area
+            }
+        }
+    }
+}
+
+ANXI = {
+    name = "Anxi"
+	name_adj = "Anxi"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = central_asia_region
+        }
+    }
+}
+
+ANDONG = {
+    name = "Andong"
+	name_adj = "Andong"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = manchuria_region
+        }
+    }
+}
+
+ANNAN = {
+    name = "Annan"
+	name_adj = "Annan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = indo_china_region
+        }
+    }
+}
+
+ANBEI = {
+    name = "Anbei"
+	name_adj = "Anbei"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = mongolia_region
+        }
+    }
+}
+
+ANTU = {
+    name = "Antu"
+	name_adj = "Antu"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = tibet_region
+        }
+    }
+}
+
+ANRI = {
+    name = "Anri"
+	name_adj = "Anri"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = japan_region
+        }
+    }
+}
+
+ANHAN = {
+    name = "Anhan"
+	name_adj = "Anhan"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = korea_region
+        }
+    }
+}
+
+ANMIAN = {
+    name = "Anmian"
+	name_adj = "Anmian"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            is_emperor_of_china = yes
+        }
+        capital_scope = {
+            region = burma_region
+        }
+    }
+}
+
+SHINAKOKU = {
+    name = "Shinakoku"
+	name_adj = "Shinakoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            superregion = china_superregion
+        }
+    }
+}
+
+MANCHUKOKU = {
+    name = "Manchukoku"
+	name_adj = "Manchukoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            region = manchuria_region
+        }
+    }
+}
+
+CHOSENKOKU = {
+    name = "Chosenkoku"
+	name_adj = "Chosenkoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            region = korea_region
+        }
+    }
+}
+
+FIRIPINKOKU = {
+    name = "Firipinkoku"
+	name_adj = "Firipinkoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            region = moluccas_region
+        }
+    }
+}
+
+MOKOKOKU = {
+    name = "Mokokoku"
+	name_adj = "Mokokoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            region = mongolia_region
+        }
+    }   
+}
+
+EZOKOKU = {
+    name = "Ezokoku"
+	name_adj = "Ezokoku"
+    conditions = {
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        overlord = {
+            OR = {
+                has_reform = shogunate
+                tag = JAP
+            }   
+        }
+        capital_scope = {
+            area = hokkaido_area
+        }
+    }
+}
+
+MACARISTAN = {
+    name = "Macaristan"
+	name_adj = "Macaristani"
+    tags = {
+        tag = HUN
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SLOVAKYA = {
+    name = "Slovakya"
+	name_adj = "Slovakyan"
+    tags = {
+        tag = SLO
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+ERDEL = {
+    name = "Erdel"
+	name_adj = "Erdeli"
+    tags = {
+        tag = TRA
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+AVUSTURYA = {
+    name = "Avusturya"
+	name_adj = "Avusturyan"
+    tags = {
+        tag = HAB
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+LOMBARDIYA = {
+    name = "Lombardiya"
+	name_adj = "Lombardiyan"
+    tags = {
+        tag = MLO
+        tag = FER
+        tag = SAV
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SIQILLIYA = {
+    name = "Siqilliya"
+	name_adj = "Siqilliyan"
+    tags = {
+        tag = SIC
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+MISIR = {
+    name = "Misir"
+	name_adj = "Misiri"
+    tags = {
+        tag = EGY
+        tag = MAM
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+TRABLUS_GARB = {
+    name = "Trâblus Gârb"
+	name_adj = "Trâblusi"
+    tags = {
+        tag = TRP
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+TUNUS = {
+    name = "Tunus"
+	name_adj = "Tunusi"
+    tags = {
+        tag = TUN
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+CEZAYIR_I_GRAB = {
+    name = "Cezayir-i Gârb"
+	name_adj = "Cezayiri"
+    tags = {
+        tag = ALG
+        tag = TLC
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+ENDULUS = {
+    name = "Endülüs"
+	name_adj = "Endülüsi"
+    tags = {
+        tag = ADU
+        tag = GRA
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+PERS = {
+    name = "Pers"
+	name_adj = "Persi"
+    tags = {
+        tag = PER
+        tag = ARL
+        tag = FRS
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+ADAL = {
+    name = "Adal"
+	name_adj = "Adali"
+    tags = {
+        tag = ADA
+        tag = HAR
+        tag = AFA
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+VENEDIK = {
+    name = "Venedik"
+	name_adj = "Venedikan"
+    tags = {
+        tag = VEN
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+CENOVA = {
+    name = "Cenova"
+	name_adj = "Cenovan"
+    tags = {
+        tag = GEN
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+FAS_EYALET = {
+    name = "Fas"
+	name_adj = "Fasi"
+    tags = {
+        tag = MOR
+        tag = SOS
+        tag = MRK
+        tag = TFL
+        tag = TET
+        tag = FEZ
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+YEMEN = {
+    name = "Yemen"
+	name_adj = "Yemeni"
+    tags = {
+        tag = YEM
+        tag = ADE
+        tag = RAS
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+TRABZON = {
+    name = "Trabzon"
+	name_adj = "Trabzoni"
+    tags = {
+        tag = TRE
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+BOSNA = {
+    name = "Bosna"
+	name_adj = "Bosnak"
+    tags = {
+        tag = BOS
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SIRVAN = {
+    name = "Sirvan"
+	name_adj = "Sirvani"
+    tags = {
+        tag = SRV
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SAM_EYALET = {
+    name = "Sam"
+	name_adj = "Sami"
+    tags = {
+        tag = SYR
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+GIRID = {
+    name = "Girid"
+	name_adj = "Giridi"
+    tags = {
+        tag = CRT
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+MORA = {
+    name = "Mora"
+	name_adj = "Mori"
+    tags = {
+        tag = MOE
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+HERSEK = {
+    name = "Hersek"
+	name_adj = "Hersekish"
+    tags = {
+        tag = HRZ
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+KIRKIM = {
+    name = "Kirim"
+	name_adj = "Kirimi"
+    tags = {
+        tag = CRI
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+DIYARBEKIR = {
+    name = "Diyarbekir"
+	name_adj = "Diyarbekiri"
+    tags = {
+        tag = AKK
+        tag = HSN
+        tag = BTL
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+MOSUL = {
+    name = "Mosul"
+	name_adj = "Mosuli"
+    tags = {
+        tag = QAR
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+BAGDAT = {
+    name = "Bagdat"
+	name_adj = "Bagdati"
+    tags = {
+        tag = IRQ
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+ZULKADRIYE = {
+    name = "Zülkadriye"
+	name_adj = "Zülkadriyi"
+    tags = {
+        tag = DUL
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+CERKESYA = {
+    name = "Cerkesya"
+	name_adj = "Cerkesyan"
+    tags = {
+        tag = CIR
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+KIBRIS = {
+    name = "Kibris"
+	name_adj = "Kibrisi"
+    tags = {
+        tag = CYP
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+KORSIKA = {
+    name = "Korsika"
+	name_adj = "Korsikan"
+    tags = {
+        tag = COR
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SARDINYA = {
+    name = "Sardinya"
+	name_adj = "Sardinya"
+    tags = {
+        tag = SAR
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+RUMELI = {
+    name = "Rumeli"
+	name_adj = "Rumelian"
+    tags = {
+        tag = BUL
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+SIRBISTAN = {
+    name = "Sirbistan"
+	name_adj = "Sirbistani"
+    tags = {
+        tag = SER
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}
+
+ARABISTAN = {
+    name = "Arabistan"
+	name_adj = "Arabistani"
+    tags = {
+        tag = ARB
+    }
+    conditions = {
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
+        }
+    }
+}

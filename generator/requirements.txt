@@ -1,0 +1,2 @@
+pyradox-txt-parser
+pillow
