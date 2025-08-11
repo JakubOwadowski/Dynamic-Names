@@ -3,6 +3,7 @@
 import os
 from collections import defaultdict
 
+from defines.templates import *
 from utils import *
 
 from classes.RuleEntry import RuleEntry
@@ -11,7 +12,8 @@ from classes.RuleEntry import RuleEntry
 class ModBuilder:
     def __init__(self):
         # Read rules, tag names, and dynasty names from input files
-        self.rules_list = read_rules()
+        self.rules_list = read_rules(RULES_PATH)
+        self.substitution_rules_list = read_rules(SUBSTITUTION_RULES_PATH)
         print("Rules read successfully")
         self.tag_name_list = read_tag_names(TAG_NAMES_PATH)
         print("Tag names read successfully")
@@ -27,18 +29,6 @@ class ModBuilder:
         self.dynasty_keys = {name: format_as_tag(name) for name in self.dynasty_names}
 
     def assign_rules(self):
-        for module in [
-            add_revolutionaries(),
-            add_feudatories(),
-            add_protectorates(),
-            add_jap_puppets(),
-            add_emperor_of_china(),
-            add_shogunates(),
-            add_eyalets(),
-            add_dynastic_names(self.rules_list),
-        ]:
-            self.rules_list.extend(module)
-
         # Map rules to applicable tags
         for rule in self.rules_list:
             if not any(x in rule.name for x in FORMAT_TEMPLATES) and not rule.tags:
@@ -46,7 +36,7 @@ class ModBuilder:
             else:
                 target_tags = rule.tags or self.tag_name_list.keys()
                 for tag in target_tags:
-                    self.tag_to_rules[tag].append(rule)
+                    self.tag_to_rules[tag].append(rule)        
 
         # Build final rule entries per tag
         for tag, loc in self.tag_name_list.items():
@@ -60,15 +50,40 @@ class ModBuilder:
                     tag_name_value = "TEO_ELECTORATE_NAME"
 
                 name_adj = rule.name_adj or loc.adj
+                name_adj2 = rule.name_adj2 or loc.adj2
 
                 self.rules[tag].append(
                     RuleEntry(
                         tag=tag_name_value,
                         name=name,
                         name_adj=name_adj,
+                        name_adj2=name_adj2,
                         condition=" ".join(rule.conditions),
                     )
                 )
+        
+        for substitution_rule in self.substitution_rules_list:
+            for rule in self.rules_list:
+                if set(substitution_rule.tags) & set(rule.tags) or rule.tags == []:
+                    loc = Localisation(substitution_rule.name, substitution_rule.name_adj, substitution_rule.name_adj2)
+                    name = get_country_name(rule.name, (substitution_rule.id, loc))
+                    if not name:
+                        continue
+                    
+                    tag_name_value = get_tag_name(substitution_rule.id, rule.id)
+
+                    name_adj = rule.name_adj or loc.adj
+                    name_adj2 = rule.name_adj2 or loc.adj2
+
+                    self.rules[substitution_rule.id].append(
+                            RuleEntry(
+                                tag=tag_name_value,
+                                name=name,
+                                name_adj=name_adj,
+                                name_adj2=name_adj2,
+                                condition=" ".join(rule.conditions),
+                            )
+                        )
 
     def generate_event_script(self):
 
@@ -79,6 +94,16 @@ class ModBuilder:
                 f"        if = {{ limit = {{ tag = {tag} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
             )
             self.events[tag] = str(self.event_id)
+            self.event_id += 1
+        for substitution_rule in self.substitution_rules_list:
+            if substitution_rule.tags != []:
+                tags = f"OR = {{ {' '.join(f'tag = {tag}' for tag in substitution_rule.tags)} }}"
+            else:
+                tags = ""
+            event_triggers.append(
+                f"        if = {{ limit = {{ {tags} {substitution_rule.conditions[0]} }} country_event = {{ id = {EVENT_NAME}.{self.event_id} }} }}"
+            )
+            self.events[substitution_rule.id] = str(self.event_id)
             self.event_id += 1
 
         dynasty_rules = [rule for rule in self.rules_list if "{DYNASTY}" in rule.name]
@@ -123,6 +148,22 @@ class ModBuilder:
                 )
             )
 
+        # Country events per substituted name tag
+        for substitution_rule in self.substitution_rules_list:
+            id = self.events[substitution_rule.id]
+            conditions = []
+            for rule in self.rules[substitution_rule.id]:
+                conditions.append(
+                    f"        if = {{ limit = {{ {rule.condition} }} override_country_name = {rule.tag} }}"
+                )
+            event_lines.append(
+                TAG_AGNOSTIC_EVENT_TEMPLATE.format(
+                    event_name=EVENT_NAME,
+                    id=id,
+                    conditions="\n".join(conditions),
+                )
+            )
+
         # Dynasty rules events
         for rule in dynasty_rules:
             id = self.events[rule.name]
@@ -152,6 +193,8 @@ class ModBuilder:
                 loc_lines.append(f' {entry.tag}: "{entry.name}"')
                 if entry.name_adj:
                     loc_lines.append(f' {entry.tag}_ADJ: "{entry.name_adj}"')
+                elif entry.name_adj2:
+                    loc_lines.append(f' {entry.tag}_ADJ2: "{entry.name_adj}"')
 
         loc_lines.append(" #dynasties")
         for rule in self.rules_list:
@@ -179,7 +222,7 @@ class ModBuilder:
         os.makedirs("../localisation", exist_ok=True)
         with open(
             f"../localisation/{EVENT_NAME}_localisation_l_english.yml",
-            "w+",
+            "w",
             encoding="utf-8-sig",
         ) as f:
             f.write("\n".join(loc_lines))

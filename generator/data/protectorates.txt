@@ -1,9 +1,0 @@
-# Region, Name
-central_asia_region,Anxi Protectorate
-manchuria_region,Andong Protectorate
-indo_china_region,Annan Protectorate
-mongolia_region,Anbei Protectorate
-tibet_region,Antu Protectorate
-japan_region,Anri Protectorate
-korea_region,Anhan Protectorate
-burma_region,Anmian Protectorate

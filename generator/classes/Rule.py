@@ -7,5 +7,6 @@ class Rule:
     id: str
     name: str
     name_adj: str = None
+    name_adj2: str = None
     tags: List[str] = field(default_factory=list)
     conditions: List[str] = field(default_factory=list)

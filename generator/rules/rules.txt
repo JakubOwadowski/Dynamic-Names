@@ -1,4 +1,4 @@
-DUCHY = {
+﻿DUCHY = {
     name = "Duchy of {NAME}"
     conditions = {
         has_reform = monarchy_mechanic
@@ -540,42 +540,43 @@ AMBROSIAN_REPUBLIC = {
     }
 }
 
-# UNITED_PROVINCES = {
-#     name = "United Provinces of {NAME}"
-#     conditions = {
-#         OR = {
-#             AND = {
-#                 government = republic
-#                 primary_culture = dutch
-#                 NOT = {
-#                     is_revolutionary_republic_trigger = yes
-#                 }
-#                 NOT = {
-#                     has_reform = presidential_despot_reform
-#                 }
-#             }
-#             AND = {
-#                 has_reform = states_general_reform
-#                 NOT = {
-#                     has_reform = parliamentary_reform
-#                 }
-#                 NOT = {
-#                     has_reform = presidential_reform
-#                 }
-#                 NOT = {
-#                     is_revolutionary_republic_trigger = yes
-#                 }
-#                 NOT = {
-#                     has_reform = constitutional_republic
-#                 }
-#                 NOT = {
-#                     has_reform = presidential_despot_reform
-#                 }
-#             }
-#         }
-#         government_rank = 2
-#     }
-# }
+UNITED_PROVINCES = {
+    name = "United Provinces of {NAME}"
+    conditions = {
+        OR = {
+            AND = {
+                government = republic
+                primary_culture = dutch
+                NOT = {
+                    is_revolutionary_republic_trigger = yes
+                }
+                NOT = {
+                    has_reform = presidential_despot_reform
+                }
+            }
+            AND = {
+                has_reform = states_general_reform
+                NOT = {
+                    has_reform = parliamentary_reform
+                }
+                NOT = {
+                    has_reform = presidential_reform
+                }
+                NOT = {
+                    is_revolutionary_republic_trigger = yes
+                }
+                NOT = {
+                    has_reform = constitutional_republic
+                }
+                NOT = {
+                    has_reform = presidential_despot_reform
+                }
+            }
+        }
+        government_rank = 2
+    }
+}
+
 HETMANATE = {
     name = "{NAME_ADJ} Hetmanate"
     conditions = {
@@ -1729,7 +1730,7 @@ GREAT_EMIRATE = {
 }
 
 MALI_KINGDOM = {
-    name = "Kingdom of Mali"
+    name = "Kingdom of {NAME}"
     tags = {
         tag = MAL
     }
@@ -1743,7 +1744,7 @@ MALI_KINGDOM = {
 }
 
 NAJRAN_EMIRATE = {
-    name = "Emirate of Najran"
+    name = "Emirate of {NAME}"
     tags = {
         tag = NJR
     }
@@ -1765,7 +1766,7 @@ NAJRAN_EMIRATE = {
 }
 
 AVAR_KHANATE = {
-    name = "Avar Khanate"
+    name = "{NAME_ADJ} Khanate"
     tags = {
         tag = AVR
     }
@@ -1778,7 +1779,7 @@ AVAR_KHANATE = {
 }
 
 AVAR_KHAGANATE = {
-    name = "Avar Khaganate"
+    name = "{NAME_ADJ} Khaganate"
     tags = {
         tag = AVR
     }
@@ -2116,7 +2117,7 @@ OTTOMAN_MARCH = {
 }
 
 ILKHANATE = {
-    name = "The Ilkhanate"
+    name = "The {NAME}"
     tags = {
         tag = ILK
     }
@@ -2788,53 +2789,55 @@ DAIMYO = {
     }
 }
 
-# FEDERAL_KINGDOM = {
-#     name = "Federal Kingdom of {NAME}"
-#     conditions = {
-#         has_reform = states_general_reform
-#         NOT = {
-#             has_reform = parliamentary_reform
-#         }
-#         NOT = {
-#             has_reform = presidential_reform
-#         }
-#         NOT = {
-#             is_revolutionary_republic_trigger = yes
-#         }
-#         NOT = {
-#             has_reform = constitutional_republic
-#         }
-#         NOT = {
-#             has_reform = presidential_despot_reform
-#         }
-#         government_rank = 2
-#         NOT = {
-#             government_rank = 3
-#         }
-#     }
-# }
-# FEDERAL_EMPIRE = {
-#     name = "Federal Empire of {NAME}"
-#     conditions = {
-#         has_reform = states_general_reform
-#         NOT = {
-#             has_reform = parliamentary_reform
-#         }
-#         NOT = {
-#             has_reform = presidential_reform
-#         }
-#         NOT = {
-#             is_revolutionary_republic_trigger = yes
-#         }
-#         NOT = {
-#             has_reform = constitutional_republic
-#         }
-#         NOT = {
-#             has_reform = presidential_despot_reform
-#         }
-#         government_rank = 3
-#     }
-# }
+FEDERAL_KINGDOM = {
+    name = "Federal Kingdom of {NAME}"
+    conditions = {
+        has_reform = states_general_reform
+        NOT = {
+            has_reform = parliamentary_reform
+        }
+        NOT = {
+            has_reform = presidential_reform
+        }
+        NOT = {
+            is_revolutionary_republic_trigger = yes
+        }
+        NOT = {
+            has_reform = constitutional_republic
+        }
+        NOT = {
+            has_reform = presidential_despot_reform
+        }
+        government_rank = 2
+        NOT = {
+            government_rank = 3
+        }
+    }
+}
+
+FEDERAL_EMPIRE = {
+    name = "Federal Empire of {NAME}"
+    conditions = {
+        has_reform = states_general_reform
+        NOT = {
+            has_reform = parliamentary_reform
+        }
+        NOT = {
+            has_reform = presidential_reform
+        }
+        NOT = {
+            is_revolutionary_republic_trigger = yes
+        }
+        NOT = {
+            has_reform = constitutional_republic
+        }
+        NOT = {
+            has_reform = presidential_despot_reform
+        }
+        government_rank = 3
+    }
+}
+
 USA = {
     name = "United States of America"
     tags = {
@@ -2924,104 +2927,69 @@ VOIEVODESHIP_TRA = {
     }
 }
 
-LPC_DUCHY = {
-    name = "Duchy of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
+PROTECTORATE = {
+    name = "{NAME} Protectorate"
     conditions = {
-        has_reform = monarchy_mechanic
-        primary_culture = lithuanian
-        NOT = {
-            government_rank = 2
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        OR = {
+            overlord = {
+                tag = JAP
+            }
+            AND = {
+                overlord = {
+                    is_emperor_of_china = yes
+                }
+                capital_scope = {
+                    NOT = {
+                        OR = {
+                            region = north_china_region
+                            region = south_china_region
+                            region = xinan_region
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-LPC_KINGDOM = {
-    name = "Kingdom of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
+FEUDATORY = {
+    name = "{NAME} Feudatory"
     conditions = {
-        has_reform = monarchy_mechanic
-        primary_culture = lithuanian
-        government_rank = 2
-        NOT = {
-            government_rank = 3
+        OR = {
+            is_subject_of_type = vassal
+            is_subject_of_type = march
+        }
+        capital_scope = {
+            OR = {
+                region = north_china_region
+                region = south_china_region
+                region = xinan_region
+            }
         }
     }
 }
 
-PLC_REPUBLIC = {
-    name = "Commonwealth of Poland-Lithuania"
+COMMONWEALTH = {
+    name = "Commonwealth of {NAME}"
     tags = {
         tag = PLC
-    }
-    conditions = {
-        government = republic
-    }
-}
-
-LPC_REPUBLIC = {
-    name = "Commonwealth of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        government = republic
-        primary_culture = lithuanian
-    }
-}
-
-LPC_BISHOPRIC = {
-    name = "Bishopric of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        government = theocracy
-        primary_culture = lithuanian
-        NOT = {
-            government_rank = 2
-        }
-    }
-}
-
-LPC_ARCHBISHOPRIC = {
-    name = "Archbishopric of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        government = theocracy
-        primary_culture = lithuanian
-        government_rank = 2
-        NOT = {
-            government_rank = 3
-        }
-    }
-}
-
-LPC_PATRIARCHATE = {
-    name = "Patriarchate of Lithuania-Poland"
-    tags = {
-        tag = PLC
-    }
-    conditions = {
-        government = theocracy
-        primary_culture = lithuanian
-        government_rank = 3
-    }
-}
-
-COMMONWEALTH_GBR = {
-    name = "Commonwealth of Britain"
-    tags = {
         tag = GBR
     }
     conditions = {
-        has_reform = protectorate_parliament_reform
+        OR = {
+            AND = {
+                tag = PLC
+                government = republic
+            }
+            AND = {
+                tag = GBR
+                has_reform = protectorate_parliament_reform
+            } 
+        }
     }
 }
 
@@ -3035,20 +3003,70 @@ KINGDOM_OF_GOD = {
     }
 }
 
-SIQ = {
-    name = "Siqilliya"
+EYALET_CUSTOM = {
+    name = "Eyalet-i {NAME}"
     tags = {
+        tag = HUN
+        tag = SLO
+        tag = TRA
+        tag = HAB
+        tag = MLO
+        tag = FER
+        tag = SAV
         tag = SIC
+        tag = EGY
+        tag = MAM
+        tag = TRP
+        tag = TUN
+        tag = ALG
+        tag = TLC
+        tag = ADU
+        tag = GRA
+        tag = PER
+        tag = ARL
+        tag = FRS
+        tag = ADA
+        tag = HAR
+        tag = AFA
+        tag = VEN
+        tag = GEN
+        tag = MOR
+        tag = SOS
+        tag = MRK
+        tag = TFL
+        tag = TET
+        tag = FEZ
+        tag = YEM
+        tag = ADE
+        tag = RAS
+        tag = TRE
+        tag = BOS
+        tag = SRV
+        tag = SYR
+        tag = CRT
+        tag = MOE
+        tag = HRZ
+        tag = CRI
+        tag = AKK
+        tag = HSN
+        tag = BTL
+        tag = QAR
+        tag = IRQ
+        tag = DUL
+        tag = CIR
+        tag = CYP
+        tag = COR
+        tag = SAR
+        tag = BUL
+        tag = SER
+        tag = ARB
     }
     conditions = {
-        has_country_flag = is_SIQ_flag
-        NOT = {
-            OR = {
-                is_subject_of_type = eyalet
-                is_subject_of_type = core_eyalet
-                has_reform = barbary_eyalet_government
-                has_reform = eyalet_government
-            }
+        OR = {
+            is_subject_of_type = eyalet
+            is_subject_of_type = core_eyalet 
+            has_reform = barbary_eyalet_government 
+            has_reform = eyalet_government 
         }
     }
 }
@@ -3112,7 +3130,7 @@ TSARDOM = {
     }
 }
 
-CROWN_SPANISH = {
+CROWN = {
     name = "Crown of {NAME}"
     tags = {
         tag = ARA
@@ -3122,27 +3140,39 @@ CROWN_SPANISH = {
         tag = NAV
         tag = VAL
         tag = CAT
-    }
-    conditions = {
-        government_rank = 2
-        num_of_provinces_in_states = 18
-    }
-}
-
-CROWN_CZECH = {
-    name = "Crown of {NAME}"
-    tags = {
         tag = BOH
         tag = MVA
     }
     conditions = {
-        government_rank = 2
-        num_of_provinces_in_states = 12
+        OR = {
+            AND = {
+                OR = {
+                    tag = ARA
+                    tag = CAS
+                    tag = LON
+                    tag = ASU
+                    tag = NAV
+                    tag = VAL
+                    tag = CAT
+                }
+                government_rank = 2
+                num_of_provinces_in_states = 18
+            }
+            AND = {
+                OR = {
+                    tag = BOH
+                    tag = MVA
+                }
+                government_rank = 2
+                num_of_provinces_in_states = 12
+            }
+        }
+        
     }
 }
 
-DUCAL_PRUSSIA = {
-    name = "Ducal Prussia"
+DUCAL = {
+    name = "Ducal {NAME}"
     tags = {
         tag = PRU
     }
@@ -3162,166 +3192,6 @@ LATER_JIN = {
     }
     conditions = {
         mission_completed = mch_proclaim_later_jin
-    }
-}
-
-# Chinese Empire titles for each of the four directions
-EASTERN = {
-    name = "Eastern {NAME}"
-    conditions = {
-        NOT = {
-            any_owned_province = {
-                area = sichuan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = yun_gui_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = chuannan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = yun_gui_borderland_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = chuanbei_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = west_gansu_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = gansu_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = shaanxi_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = guangxi_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = west_guangdong_area
-            }
-        }
-        culture_group = east_asian
-        num_of_provinces_in_states = 10
-        capital_scope = {
-            superregion = china_superregion
-        }
-        is_subject = no
-    }
-}
-
-WESTERN = {
-    name = "Western {NAME}"
-    conditions = {
-        NOT = {
-            any_owned_province = {
-                area = guangdong_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = fujian_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = jiangxi_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = huguang_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = zhejiang_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = south_anhui_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = taiwan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = south_jiangsu_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = hunan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = hebei_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = south_hebei_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = shandong_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = henan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = shanxi_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = north_henan_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = jiangsu_area
-            }
-        }
-        NOT = {
-            any_owned_province = {
-                area = anhui_area
-            }
-        }
-        culture_group = east_asian
-        num_of_provinces_in_states = 10
-        capital_scope = {
-            superregion = china_superregion
-        }
-        is_subject = no
     }
 }
 
@@ -3371,7 +3241,6 @@ CHINESE_EMPIRE = {
     }
 }
 
-# These are admittedly pretty arbitrary
 LATER = {
     name = "Later {NAME}"
     tags = {
@@ -3385,7 +3254,7 @@ LATER = {
 }
 
 OIRAT_CONFEDERATION = {
-    name = "Four Oirat Confederation"
+    name = "Four {NAME} Confederation"
     tags = {
         tag = OIR
     }
@@ -3421,36 +3290,6 @@ NORTHERN_YUAN = {
         capital_scope = {
             region = mongolia_region
         }
-        is_subject = no
-    }
-}
-
-CHAGATAI_HORDE = {
-    name = "Chagatai Horde"
-    tags = {
-        tag = CHG
-    }
-    conditions = {
-        has_reform = steppe_horde
-        NOT = {
-            government_rank = 2
-        }
-        has_country_flag = is_CHAGATAI_flag
-    }
-}
-
-CHAGATAI_KHANATE = {
-    name = "Chagatai Khanate"
-    tags = {
-        tag = CHG
-    }
-    conditions = {
-        has_reform = steppe_horde
-        government_rank = 2
-        NOT = {
-            government_rank = 3
-        }
-        has_country_flag = is_CHAGATAI_flag
     }
 }
 
@@ -3481,16 +3320,6 @@ WLS_PRINCIPALITY = {
     }
 }
 
-AUSTRALIA_HUNGARY = {
-    name = "Australia-Hungary"
-    tags = {
-        tag = AUH
-    }
-    conditions = {
-        has_country_flag = is_AUSTRALIA_HUNGARY_flag
-    }
-}
-
 FRISIAN_FREEDOM = {
     name = "{NAME_ADJ} Freedom"
     tags = {
@@ -3504,6 +3333,25 @@ FRISIAN_FREEDOM = {
     }
 }
 
+REVOLUTIONARY_REPUBLIC = {
+    name = "{NAME_ADJ} Republic"
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
+REVOLUTIONARY_EMPIRE = {
+    name = "Empire of the {NAME_ADJ}"
+    tags = {
+        tag = FRA
+    }
+    conditions = {
+        government = republic
+        is_revolutionary_republic_trigger = yes
+    }
+}
+
 PARLIAMENT_OF_HEAVEN = {
     name = "Heavenly Parliament of {NAME}"
     conditions = {
@@ -3513,7 +3361,7 @@ PARLIAMENT_OF_HEAVEN = {
 }
 
 SWISS_CONFEDERATION = {
-    name = "Swiss Confederation"
+    name = "{NAME_ADJ} Confederation"
     tags = {
         tag = SWI
     }
@@ -3547,7 +3395,7 @@ NORTH_SEA_EMPIRE = {
 }
 
 NOVGOROD_REPUBLIC = {
-    name = "Lord Novgorod the Great"
+    name = "Lord {NAME} the Great"
     tags = {
         tag = NOV
     }
@@ -3560,7 +3408,7 @@ NOVGOROD_REPUBLIC = {
 }
 
 NOVGOROD_GREAT_REPUBLIC = {
-    name = "Sovereign Lord Novgorod the Greatest"
+    name = "Sovereign Lord {NAME} the Greatest"
     tags = {
         tag = NOV
     }
@@ -3571,7 +3419,7 @@ NOVGOROD_GREAT_REPUBLIC = {
 }
 
 THREE_LEAGUES = {
-    name = "Three Leagues"
+    name = "The Three Leagues"
     tags = {
         tag = TTL
     }
@@ -3580,43 +3428,15 @@ THREE_LEAGUES = {
     }
 }
 
-# Roman Empire depending on the existence of either the Byzantine or Roman tags
 BYZ_ROMAN_EMPIRE = {
-    name = "Roman Empire"
+    name = "Empire of the Romans"
     tags = {
         tag = BYZ
-    }
-}
-
-ROM_ROMAN_EMPIRE = {
-    name = "Roman Empire"
-    tags = {
-        tag = ROM
-    }
-}
-
-EASTERN_ROMAN_EMPIRE = {
-    name = "Eastern Roman Empire"
-    tags = {
-        tag = BYZ
-    }
-    conditions = {
-        exists = ROM
-    }
-}
-
-WESTERN_ROMAN_EMPIRE = {
-    name = "Western Roman Empire"
-    tags = {
-        tag = ROM
-    }
-    conditions = {
-        exists = BYZ
     }
 }
 
 BYZ_ROMAN_REPUBLIC = {
-    name = "Roman Republic"
+    name = "Republic of the Romans"
     tags = {
         tag = BYZ
     }
@@ -3629,73 +3449,13 @@ BYZ_ROMAN_REPUBLIC = {
     }
 }
 
-ROM_ROMAN_REPUBLIC = {
-    name = "Roman Republic"
-    tags = {
-        tag = ROM
-    }
-    conditions = {
-        government = republic
-        is_subject = no
-        NOT = {
-            exists = BYZ
-        }
-    }
-}
-
-EASTERN_ROMAN_REPUBLIC = {
-    name = "Eastern Roman Republic"
-    tags = {
-        tag = BYZ
-    }
-    conditions = {
-        government = republic
-        is_subject = no
-        exists = ROM
-    }
-}
-
-WESTERN_ROMAN_REPUBLIC = {
-    name = "Western Roman Republic"
-    tags = {
-        tag = ROM
-    }
-    conditions = {
-        government = republic
-        is_subject = no
-        exists = BYZ
-    }
-}
-
 EMPIRE_OF_TREBIZOND = {
-    name = "Empire of Trebizond"
+    name = "Empire of {NAME}"
     tags = {
         tag = TRE
     }
     conditions = {
         has_reform = monarchy_mechanic
-        government_rank = 2
-    }
-}
-
-REPUBLIC_OF_TREBIZOND = {
-    name = "Republic of Trebizond"
-    tags = {
-        tag = TRE
-    }
-    conditions = {
-        government = republic
-        is_subject = no
-    }
-}
-
-GOTHIC_EMPIRE = {
-    name = "Gothic Empire"
-    tags = {
-        tag = FEO
-    }
-    conditions = {
-        has_country_flag = is_GOTHIA_flag
         government_rank = 2
     }
 }
@@ -3720,10 +3480,6 @@ RHODES_KNIGHTS = {
     conditions = {
         OR = {
             has_reform = monastic_order_reform
-            AND = {
-                government = theocracy
-                tag = KOJ
-            }
         }
         capital = 320
         NOT = {
@@ -3740,10 +3496,6 @@ MALTA_KNIGHTS = {
     conditions = {
         OR = {
             has_reform = monastic_order_reform
-            AND = {
-                government = theocracy
-                tag = KOJ
-            }
         }
         capital = 126
         NOT = {
@@ -3760,15 +3512,46 @@ JERUSALEM_KNIGHTS = {
     conditions = {
         OR = {
             has_reform = monastic_order_reform
-            AND = {
-                government = theocracy
-                tag = KOJ
-            }
         }
         capital = 379
         NOT = {
             government_rank = 3
         }
+    }
+}
+
+KNIGHTS_HOSPITALLER = {
+    name = "Knights Hospitaller"
+    tags = {
+        tag = KNI
+    }
+    conditions = {
+        OR = {
+            has_reform = monastic_order_reform
+        }
+        NOT = {
+            OR = {
+                capital = 320
+                capital = 126
+                capital = 379
+            }
+        }
+        NOT = {
+            government_rank = 3
+        }
+    }
+}
+
+KNIGHTS_HOSPITALLER_EMPIRE = {
+    name = "Empire of the Knights Hospitaller"
+    tags = {
+        tag = KNI
+    }
+    conditions = {
+        OR = {
+            has_reform = monastic_order_reform
+        }
+        government_rank = 3
     }
 }
 
@@ -3826,68 +3609,5 @@ EMPIRE_OF_THE_CROWN_OF_SAINT_STEFAN = {
     conditions = {
         has_reform = monarchy_mechanic
         government_rank = 3
-    }
-}
-
-GREAT_ARMENIA_PRINCIPALITY = {
-    name = "Principality of Great Armenia"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-        NOT = {
-            government_rank = 2
-        }
-        has_country_flag = is_GREAT_ARMENIA_flag
-    }
-}
-
-GREAT_ARMENIA_KINGDOM = {
-    name = "Kingdom of Great Armenia"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-        government_rank = 2
-        NOT = {
-            government_rank = 3
-        }
-        has_country_flag = is_GREAT_ARMENIA_flag
-    }
-}
-
-GREAT_ARMENIA_EMPIRE = {
-    name = "Empire of Great Armenia"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        has_reform = monarchy_mechanic
-        government_rank = 3
-        has_country_flag = is_GREAT_ARMENIA_flag
-    }
-}
-
-GREAT_ARMENIA_REPUBLIC = {
-    name = "Great Armenian Republic"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        government = republic
-        has_country_flag = is_GREAT_ARMENIA_flag
-    }
-}
-
-GREAT_ARMENIA_THEOCRACY = {
-    name = "Holy Great Armenian State"
-    tags = {
-        tag = ARM
-    }
-    conditions = {
-        government = theocracy
-        has_country_flag = is_GREAT_ARMENIA_flag
     }
 }
